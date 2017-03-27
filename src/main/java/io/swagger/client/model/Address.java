@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Contact Address Object. See below for details.
  */
 @ApiModel(description = "Contact Address Object. See below for details.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:12:11.926Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:57:25.206Z")
 public class Address {
   @SerializedName("line_1")
   private String line1 = null;

@@ -26,7 +26,7 @@ import java.util.List;
  * The Full Device Object includes the properties in the Device Summary Object, along with the following:
  */
 @ApiModel(description = "The Full Device Object includes the properties in the Device Summary Object, along with the following:")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:12:11.926Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:57:25.206Z")
 public class DeviceFull {
   @SerializedName("id")
   private Integer id = null;

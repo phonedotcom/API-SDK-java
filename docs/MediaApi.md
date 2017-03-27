@@ -9,7 +9,8 @@ Method | HTTP request | Description
 [**deleteAccountMedia**](MediaApi.md#deleteAccountMedia) | **DELETE** /accounts/{account_id}/media/{media_id} | Delete an individual media record
 [**getAccountMedia**](MediaApi.md#getAccountMedia) | **GET** /accounts/{account_id}/media/{media_id} | Show details of an individual media recording (Greeting or Hold Music)
 [**listAccountMedia**](MediaApi.md#listAccountMedia) | **GET** /accounts/{account_id}/media | Get a list of media recordings for an account
-[**replaceAccountMediaTts**](MediaApi.md#replaceAccountMediaTts) | **PUT** /accounts/{account_id}/media/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+[**replaceAccountMediaFiles**](MediaApi.md#replaceAccountMediaFiles) | **PUT** /accounts/{account_id}/media/files/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+[**replaceAccountMediaTts**](MediaApi.md#replaceAccountMediaTts) | **PUT** /accounts/{account_id}/media/tts/{media_id} | Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
 
 
 <a name="createAccountMediaFiles"></a>
@@ -301,6 +302,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ListMedia**](ListMedia.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="replaceAccountMediaFiles"></a>
+# **replaceAccountMediaFiles**
+> MediaFull replaceAccountMediaFiles(accountId, mediaId, json, file)
+
+Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+
+See Account Media for more info on the properties.
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiClient;
+//import io.swagger.client.ApiException;
+//import io.swagger.client.Configuration;
+//import io.swagger.client.auth.*;
+//import io.swagger.client.api.MediaApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: apiKey
+ApiKeyAuth apiKey = (ApiKeyAuth) defaultClient.getAuthentication("apiKey");
+apiKey.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apiKey.setApiKeyPrefix("Token");
+
+MediaApi apiInstance = new MediaApi();
+Integer accountId = 56; // Integer | Account ID
+Integer mediaId = 56; // Integer | Media ID
+String json = "json_example"; // String | Media extra parameters
+File file = new File("/path/to/file.txt"); // File | Media file
+try {
+    MediaFull result = apiInstance.replaceAccountMediaFiles(accountId, mediaId, json, file);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MediaApi#replaceAccountMediaFiles");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **Integer**| Account ID |
+ **mediaId** | **Integer**| Media ID |
+ **json** | **String**| Media extra parameters | [optional]
+ **file** | **File**| Media file | [optional]
+
+### Return type
+
+[**MediaFull**](MediaFull.md)
 
 ### Authorization
 

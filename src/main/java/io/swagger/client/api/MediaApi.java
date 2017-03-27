@@ -719,12 +719,150 @@ public class MediaApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+    /* Build call for replaceAccountMediaFiles */
+    private com.squareup.okhttp.Call replaceAccountMediaFilesCall(Integer accountId, Integer mediaId, String json, File file, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/accounts/{account_id}/media/files/{media_id}".replaceAll("\\{format\\}","json")
+        .replaceAll("\\{" + "account_id" + "\\}", apiClient.escapeString(accountId.toString()))
+        .replaceAll("\\{" + "media_id" + "\\}", apiClient.escapeString(mediaId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        if (json != null)
+        localVarFormParams.put("json", json);
+        if (file != null)
+        localVarFormParams.put("file", file);
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "apiKey" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call replaceAccountMediaFilesValidateBeforeCall(Integer accountId, Integer mediaId, String json, File file, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling replaceAccountMediaFiles(Async)");
+        }
+        
+        // verify the required parameter 'mediaId' is set
+        if (mediaId == null) {
+            throw new ApiException("Missing the required parameter 'mediaId' when calling replaceAccountMediaFiles(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = replaceAccountMediaFilesCall(accountId, mediaId, json, file, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+     * See Account Media for more info on the properties.
+     * @param accountId Account ID (required)
+     * @param mediaId Media ID (required)
+     * @param json Media extra parameters (optional)
+     * @param file Media file (optional)
+     * @return MediaFull
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public MediaFull replaceAccountMediaFiles(Integer accountId, Integer mediaId, String json, File file) throws ApiException {
+        ApiResponse<MediaFull> resp = replaceAccountMediaFilesWithHttpInfo(accountId, mediaId, json, file);
+        return resp.getData();
+    }
+
+    /**
+     * Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+     * See Account Media for more info on the properties.
+     * @param accountId Account ID (required)
+     * @param mediaId Media ID (required)
+     * @param json Media extra parameters (optional)
+     * @param file Media file (optional)
+     * @return ApiResponse&lt;MediaFull&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<MediaFull> replaceAccountMediaFilesWithHttpInfo(Integer accountId, Integer mediaId, String json, File file) throws ApiException {
+        com.squareup.okhttp.Call call = replaceAccountMediaFilesValidateBeforeCall(accountId, mediaId, json, file, null, null);
+        Type localVarReturnType = new TypeToken<MediaFull>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB. (asynchronously)
+     * See Account Media for more info on the properties.
+     * @param accountId Account ID (required)
+     * @param mediaId Media ID (required)
+     * @param json Media extra parameters (optional)
+     * @param file Media file (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call replaceAccountMediaFilesAsync(Integer accountId, Integer mediaId, String json, File file, final ApiCallback<MediaFull> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = replaceAccountMediaFilesValidateBeforeCall(accountId, mediaId, json, file, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<MediaFull>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /* Build call for replaceAccountMediaTts */
     private com.squareup.okhttp.Call replaceAccountMediaTtsCall(Integer accountId, Integer mediaId, CreateMediaParams data, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = data;
         
         // create path and map variables
-        String localVarPath = "/accounts/{account_id}/media/{media_id}".replaceAll("\\{format\\}","json")
+        String localVarPath = "/accounts/{account_id}/media/tts/{media_id}".replaceAll("\\{format\\}","json")
         .replaceAll("\\{" + "account_id" + "\\}", apiClient.escapeString(accountId.toString()))
         .replaceAll("\\{" + "media_id" + "\\}", apiClient.escapeString(mediaId.toString()));
 

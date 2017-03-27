@@ -23,7 +23,7 @@ import io.swagger.client.model.DeviceSummary;
  * Device Membership Object, or NULL. Read-only. See below for details.
  */
 @ApiModel(description = "Device Membership Object, or NULL. Read-only. See below for details.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:12:11.926Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:57:25.206Z")
 public class DeviceMembership {
   @SerializedName("line")
   private Integer line = null;

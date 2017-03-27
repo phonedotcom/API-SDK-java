@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * The Device Summary Object is used to briefly represent a VoIP device. It consists of the ID and name only:
  */
 @ApiModel(description = "The Device Summary Object is used to briefly represent a VoIP device. It consists of the ID and name only:")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:12:11.926Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:57:25.206Z")
 public class DeviceSummary {
   @SerializedName("id")
   private Integer id = null;

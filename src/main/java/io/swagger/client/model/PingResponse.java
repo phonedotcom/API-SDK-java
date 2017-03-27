@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * The ping response object.
  */
 @ApiModel(description = "The ping response object.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:12:11.926Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:57:25.206Z")
 public class PingResponse {
   @SerializedName("datetime")
   private String datetime = null;

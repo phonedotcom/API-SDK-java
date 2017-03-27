@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * The Group Summary Object is used to briefly represent a contact group. It can occur in several places throughout this API. Here are the properties:
  */
 @ApiModel(description = "The Group Summary Object is used to briefly represent a contact group. It can occur in several places throughout this API. Here are the properties:")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:12:11.926Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:57:25.206Z")
 public class GroupSummary {
   @SerializedName("id")
   private Integer id = null;

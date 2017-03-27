@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * The Schedule Summary Object is used to briefly represent a schedule. It can be seen in several places throughout this API. Here are the properties:
  */
 @ApiModel(description = "The Schedule Summary Object is used to briefly represent a schedule. It can be seen in several places throughout this API. Here are the properties:")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:12:11.926Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:57:25.206Z")
 public class ScheduleSummary {
   @SerializedName("id")
   private Integer id = null;

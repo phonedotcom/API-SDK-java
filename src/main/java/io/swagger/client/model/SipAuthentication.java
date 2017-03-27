@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * A SIP Authentication Properties Object. See below for details. Read-only.
  */
 @ApiModel(description = "A SIP Authentication Properties Object. See below for details. Read-only.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:12:11.926Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:57:25.206Z")
 public class SipAuthentication {
   @SerializedName("host")
   private String host = null;

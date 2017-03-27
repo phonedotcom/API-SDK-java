@@ -28,7 +28,7 @@ import java.util.List;
  * The Full Contact Object includes all of the properties in the Contact Summary Object, along with several more:
  */
 @ApiModel(description = "The Full Contact Object includes all of the properties in the Contact Summary Object, along with several more:")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-13T08:15:06.119Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:12:11.926Z")
 public class ContactFull {
   @SerializedName("id")
   private Integer id = null;

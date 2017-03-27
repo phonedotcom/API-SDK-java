@@ -19,50 +19,29 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * Email
+ * DeleteMedia
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:12:11.926Z")
-public class Email {
-  @SerializedName("type")
-  private String type = null;
+public class DeleteMedia {
+  @SerializedName("success")
+  private Boolean success = null;
 
-  @SerializedName("email")
-  private String email = null;
-
-  public Email type(String type) {
-    this.type = type;
+  public DeleteMedia success(Boolean success) {
+    this.success = success;
     return this;
   }
 
    /**
-   * Email type, one of: primary or alternate. Default is primary.
-   * @return type
+   * Get success
+   * @return success
   **/
-  @ApiModelProperty(example = "null", value = "Email type, one of: primary or alternate. Default is primary.")
-  public String getType() {
-    return type;
+  @ApiModelProperty(example = "null", value = "")
+  public Boolean getSuccess() {
+    return success;
   }
 
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  public Email email(String email) {
-    this.email = email;
-    return this;
-  }
-
-   /**
-   * Email address. Required.
-   * @return email
-  **/
-  @ApiModelProperty(example = "null", value = "Email address. Required.")
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
+  public void setSuccess(Boolean success) {
+    this.success = success;
   }
 
 
@@ -74,24 +53,22 @@ public class Email {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Email email = (Email) o;
-    return Objects.equals(this.type, email.type) &&
-        Objects.equals(this.email, email.email);
+    DeleteMedia deleteMedia = (DeleteMedia) o;
+    return Objects.equals(this.success, deleteMedia.success);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, email);
+    return Objects.hash(success);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Email {\n");
+    sb.append("class DeleteMedia {\n");
     
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("}");
     return sb.toString();
   }

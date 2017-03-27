@@ -13,17 +13,22 @@
 package io.swagger.client.api;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import io.swagger.client.ApiException;
 import io.swagger.client.helper.TestConfig;
 import io.swagger.client.model.CreateRouteParams;
+import io.swagger.client.model.DeleteRoute;
+import io.swagger.client.model.ListQueues;
 import io.swagger.client.model.ListRoutes;
+import io.swagger.client.model.QueueFull;
 import io.swagger.client.model.QueueSummary;
 import io.swagger.client.model.RouteFull;
 import io.swagger.client.model.RuleSet;
@@ -35,10 +40,58 @@ import io.swagger.client.model.RuleSetAction;
 public class RoutesApiTest {
 
 	private final RoutesApi api = new RoutesApi();
+	private final QueuesApi queuesApi = new QueuesApi();
 
 	@Before
 	public void initTest() {
 		TestConfig.setAuthorization();
+	}
+	
+	@Test
+	public void createGetReplaceDeleteRouteTest() throws ApiException {
+		Integer accountId = 1315091;
+		CreateRouteParams data = new CreateRouteParams();
+		data.setName("name" + TestConfig.nextRandom());
+		
+		RuleSetAction action = new RuleSetAction();
+		action.action("queue");
+		
+		ListQueues queues = queuesApi.listAccountQueues(accountId, null, null, null, null, 25, 0, null);
+		QueueFull firstQueue = queues.getItems().get(0);
+
+		QueueSummary queue = new QueueSummary();
+		queue.id(firstQueue.getId());
+		queue.name(firstQueue.getName());
+		
+		action.queue(queue);
+		List<RuleSetAction> actions = new ArrayList<>();
+		
+		actions.add(action);
+		
+		RuleSet rule = new RuleSet();
+		rule.actions(actions);
+		
+		List<Object> rules = new ArrayList<>();
+		rules.add(rule);
+
+		data.setRules(rules);
+		
+		RouteFull response = api.createRoute(accountId, data);
+		assertNotNull(response);
+		
+		Integer routeId = response.getId();
+		
+		CreateRouteParams dataReplace = new CreateRouteParams();
+		String name2 = "name" + TestConfig.nextRandom();
+		dataReplace.setName(name2);
+
+		dataReplace.setRules(rules);
+		dataReplace.setExtension(response.getExtension());
+		RouteFull responseReplace = api.replaceAccountRoute(accountId, routeId, dataReplace);
+		assertNotNull(responseReplace);
+		
+		DeleteRoute responseDelete = api.deleteAccountRoute(accountId, routeId);
+		assertTrue(responseDelete.getSuccess());
 	}
 
 	/**
@@ -59,9 +112,12 @@ public class RoutesApiTest {
 		RuleSetAction action = new RuleSetAction();
 		action.action("queue");
 		
+		ListQueues queues = queuesApi.listAccountQueues(accountId, null, null, null, null, 25, 0, null);
+		QueueFull firstQueue = queues.getItems().get(0);
+
 		QueueSummary queue = new QueueSummary();
-		queue.id(22176);
-		queue.name("w8zqw3avqaa2");
+		queue.id(firstQueue.getId());
+		queue.name(firstQueue.getName());
 		
 		action.queue(queue);
 		List<RuleSetAction> actions = new ArrayList<>();
@@ -106,12 +162,12 @@ public class RoutesApiTest {
 	 *             if the Api call fails
 	 */
 	@Test
+	@Ignore("tested in other test")
 	public void getAccountRouteTest() throws ApiException {
 		Integer accountId = 1315091;
 		Integer routeId = null;
-		// RouteFull response = api.getAccountRoute(accountId, routeId);
-
-		// TODO: test validations
+		RouteFull response = api.getAccountRoute(accountId, routeId);
+		assertNotNull(response);
 	}
 
 	/**
@@ -123,7 +179,8 @@ public class RoutesApiTest {
 	 *             if the Api call fails
 	 */
 	@Test
-	public void listAccountRoutesTest() throws ApiException {
+	public void listGetAccountRoutesTest() throws ApiException {
+
 		Integer accountId = 1315091;
 		List<String> filtersId = null;
 		List<String> filtersName = null;
@@ -135,12 +192,22 @@ public class RoutesApiTest {
 		ListRoutes response = api.listAccountRoutes(accountId, filtersId, filtersName, sortId, sortName, limit,
 				offset, fields);
 		assertNotNull(response.getFilters());
-		assertNotNull(response.getItems());
+		List<RouteFull> items = response.getItems();
+		assertNotNull(items);
 		assertNotNull(response.getLimit());
 		assertNotNull(response.getOffset());
 		assertNotNull(response.getSort());
 		assertNotNull(response.getTotal());
-		// TODO: test validations
+		
+		if (items.size() > 0) {
+			RouteFull routeFull = items.get(0);
+			Integer firstItemId = routeFull.getId();
+			RouteFull getRouteResponse = api.getAccountRoute(accountId, firstItemId);
+		//		assertNotNull(getRouteResponse.getExtension());
+			assertNotNull(getRouteResponse.getId());
+			assertNotNull(getRouteResponse.getName());
+			assertNotNull(getRouteResponse.getRules());
+		}
 	}
 
 	/**
@@ -152,14 +219,13 @@ public class RoutesApiTest {
 	 *             if the Api call fails
 	 */
 	@Test
+	@Ignore("Tested in other test")
 	public void replaceAccountRouteTest() throws ApiException {
 		Integer accountId = null;
 		Integer routeId = null;
 		CreateRouteParams data = null;
-		// RouteFull response = api.replaceAccountRoute(accountId, routeId,
-		// data);
-
-		// TODO: test validations
+		RouteFull response = api.replaceAccountRoute(accountId, routeId, data);
+		assertNotNull(response);
 	}
 
 }

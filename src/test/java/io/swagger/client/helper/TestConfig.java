@@ -24,7 +24,7 @@ public final class TestConfig {
         // Configure API key authorization: apiKey
         ApiKeyAuth apiKey = (ApiKeyAuth) defaultClient.getAuthentication("apiKey");
         apiKey.setApiKeyPrefix("Bearer");
-        apiKey.setApiKey("Place your API key here");
+        apiKey.setApiKey("621HVZqwZO2JHng8M2tTRtdUIOwVy7u5OeyHjEoG");
 	}
 
 	public static List<String> createDefaultFilter() {

@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * The Full Application Object is identical to the Application Summary Object. See above for details.
  */
 @ApiModel(description = "The Full Application Object is identical to the Application Summary Object. See above for details.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-13T08:15:06.119Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:12:11.926Z")
 public class ApplicationFull {
   @SerializedName("id")
   private Integer id = null;

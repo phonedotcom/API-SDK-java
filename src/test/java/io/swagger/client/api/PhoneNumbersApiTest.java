@@ -60,15 +60,15 @@ public class PhoneNumbersApiTest {
 		Boolean blockIncoming = true;
 		data.setBlockIncoming(blockIncoming);
 		String callerIdName = "koler ajdi nejm";
-		data.setCallerIdName(callerIdName);
+//		data.setCallerIdName(callerIdName);
 		String callerIdType = "business";
-		data.setCallerIdType(callerIdType);
+//		data.setCallerIdType(callerIdType);
 		String callNotificationsSms = "+18587740222";
-		data.setCallNotificationsSms(callNotificationsSms);
+//		data.setCallNotificationsSms(callNotificationsSms);
 		String name = "Phone Nejm";
 		data.setName(name);
 		String smsForwardingType = "extension";
-		data.setSmsForwardingType(smsForwardingType);
+//		data.setSmsForwardingType(smsForwardingType);
 		String phoneNumber = availableNumber;
 		data.setPhoneNumber(phoneNumber);
 		
@@ -102,15 +102,15 @@ public class PhoneNumbersApiTest {
 		Boolean blockIncoming2 = true;
 		data2.setBlockIncoming(blockIncoming2);
 		String callerIdName2 = "Caller Id Name";
-		data2.setCallerIdName(callerIdName2);
+//		data2.setCallerIdName(callerIdName2);
 		String callerIdType2 = "Caller Id Type";
-		data2.setCallerIdType(callerIdType2);
+//		data2.setCallerIdType(callerIdType2);
 		String callNotificationsSms2 = "Call Notifications Sms";
-		data2.setCallNotificationsSms(callNotificationsSms2);
+//		data2.setCallNotificationsSms(callNotificationsSms2);
 		String name2 = "Geordi";
 		data2.setName(name2);
 		String smsForwardingType2 = "Sms Forwarding Type";
-		data2.setSmsForwardingType(smsForwardingType2);
+//		data2.setSmsForwardingType(smsForwardingType2);
         PhoneNumberFull responseReplace = api.replaceAccountPhoneNumber(accountId, responseCreate.getId(), data2);
         assertNotNull(responseReplace);
 

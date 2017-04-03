@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * The Recording Summary Object is used to briefly represent a media recording. It can be seen in several places throughout this API. Here are the properties:
  */
 @ApiModel(description = "The Recording Summary Object is used to briefly represent a media recording. It can be seen in several places throughout this API. Here are the properties:")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:57:25.206Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
 public class MediaSummary {
   @SerializedName("id")
   private Integer id = null;

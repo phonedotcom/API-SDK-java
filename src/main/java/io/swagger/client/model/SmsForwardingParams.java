@@ -17,25 +17,23 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.ApplicationSummary;
-import io.swagger.client.model.ExtensionSummary;
 
 /**
  * SMS Forwarding Object, or NULL
  */
 @ApiModel(description = "SMS Forwarding Object, or NULL")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
-public class SmsForwarding {
+public class SmsForwardingParams {
   @SerializedName("type")
   private String type = null;
 
   @SerializedName("extension")
-  private ExtensionSummary extension = null;
+  private Integer extension = null;
 
   @SerializedName("application")
-  private ApplicationSummary application = null;
+  private Integer application = null;
 
-  public SmsForwarding type(String type) {
+  public SmsForwardingParams type(String type) {
     this.type = type;
     return this;
   }
@@ -53,7 +51,7 @@ public class SmsForwarding {
     this.type = type;
   }
 
-  public SmsForwarding extension(ExtensionSummary extension) {
+  public SmsForwardingParams extension(Integer extension) {
     this.extension = extension;
     return this;
   }
@@ -63,15 +61,15 @@ public class SmsForwarding {
    * @return extension
   **/
   @ApiModelProperty(example = "null", value = "Required if type = \"extension\". Extension that messages should be directed to. Output is an Extension Summary Object. Input must be an Extension Lookup Object.")
-  public ExtensionSummary getExtension() {
+  public Integer getExtension() {
     return extension;
   }
 
-  public void setExtension(ExtensionSummary extension) {
+  public void setExtension(Integer extension) {
     this.extension = extension;
   }
 
-  public SmsForwarding application(ApplicationSummary application) {
+  public SmsForwardingParams application(Integer application) {
     this.application = application;
     return this;
   }
@@ -81,11 +79,11 @@ public class SmsForwarding {
    * @return application
   **/
   @ApiModelProperty(example = "null", value = "Required if type = \"application\". Application that messages should be directed to. Output is an Application Summary Object. Input must be an Application Lookup Object.")
-  public ApplicationSummary getApplication() {
+  public Integer getApplication() {
     return application;
   }
 
-  public void setApplication(ApplicationSummary application) {
+  public void setApplication(Integer application) {
     this.application = application;
   }
 
@@ -98,10 +96,10 @@ public class SmsForwarding {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SmsForwarding smsForwarding = (SmsForwarding) o;
-    return Objects.equals(this.type, smsForwarding.type) &&
-        Objects.equals(this.extension, smsForwarding.extension) &&
-        Objects.equals(this.application, smsForwarding.application);
+    SmsForwardingParams smsForwardingParams = (SmsForwardingParams) o;
+    return Objects.equals(this.type, smsForwardingParams.type) &&
+        Objects.equals(this.extension, smsForwardingParams.extension) &&
+        Objects.equals(this.application, smsForwardingParams.application);
   }
 
   @Override
@@ -113,7 +111,7 @@ public class SmsForwarding {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SmsForwarding {\n");
+    sb.append("class SmsForwardingParams {\n");
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    extension: ").append(toIndentedString(extension)).append("\n");

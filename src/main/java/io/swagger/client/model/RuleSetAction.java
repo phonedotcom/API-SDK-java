@@ -30,7 +30,7 @@ import java.util.List;
  * Filter Object. Optional. See below for details.
  */
 @ApiModel(description = "Filter Object. Optional. See below for details.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:57:25.206Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
 public class RuleSetAction {
   @SerializedName("action")
   private String action = null;

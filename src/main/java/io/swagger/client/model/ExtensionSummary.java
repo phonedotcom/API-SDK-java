@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * The Extension Summary Object is used to briefly represent an extension. It can be seen in several places throughout this API. Here are the properties:
  */
 @ApiModel(description = "The Extension Summary Object is used to briefly represent an extension. It can be seen in several places throughout this API. Here are the properties:")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:57:25.206Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
 public class ExtensionSummary {
   @SerializedName("id")
   private Integer id = null;

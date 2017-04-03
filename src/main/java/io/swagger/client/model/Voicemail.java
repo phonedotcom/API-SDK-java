@@ -24,7 +24,7 @@ import io.swagger.client.model.Notification;
  * Voicemail Object. See below for details.
  */
 @ApiModel(description = "Voicemail Object. See below for details.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:57:25.206Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
 public class Voicemail {
   @SerializedName("enabled")
   private Boolean enabled = null;

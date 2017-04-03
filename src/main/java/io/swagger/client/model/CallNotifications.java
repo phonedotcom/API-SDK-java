@@ -24,7 +24,7 @@ import java.util.List;
  * Call Notifications Object or NULL
  */
 @ApiModel(description = "Call Notifications Object or NULL")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-27T10:57:25.206Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
 public class CallNotifications {
   @SerializedName("emails")
   private List<String> emails = new ArrayList<String>();

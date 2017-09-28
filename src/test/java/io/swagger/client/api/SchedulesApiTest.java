@@ -1,4 +1,4 @@
-/**
+/*
  * Phone.com API
  * This is a Phone.com api Swagger definition
  *
@@ -13,30 +13,25 @@
 
 package io.swagger.client.api;
 
-import static org.junit.Assert.assertNotNull;
-
-import java.util.List;
-
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
-
 import io.swagger.client.ApiException;
-import io.swagger.client.helper.TestConfig;
-import io.swagger.client.model.ListSchedules;
+import io.swagger.client.model.ListSchedulesFull;
 import io.swagger.client.model.ScheduleFull;
+import org.junit.Test;
+import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for SchedulesApi
  */
+@Ignore
 public class SchedulesApiTest {
 
     private final SchedulesApi api = new SchedulesApi();
 
-    @Before
-    public void initTest() {
-    	TestConfig.setAuthorization();
-    }
     
     /**
      * Show details of an individual schedule
@@ -47,12 +42,12 @@ public class SchedulesApiTest {
      *          if the Api call fails
      */
     @Test
-    @Ignore("Tested in other test")
     public void getAccountScheduleTest() throws ApiException {
-        Integer accountId = null;
+        Integer accountId = 1315091;
         Integer scheduleId = null;
         ScheduleFull response = api.getAccountSchedule(accountId, scheduleId);
-        assertNotNull(response);
+
+        // TODO: test validations
     }
     
     /**
@@ -64,8 +59,7 @@ public class SchedulesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listGetAccountSchedulesTest() throws ApiException {
-
+    public void listAccountSchedulesTest() throws ApiException {
         Integer accountId = 1315091;
         List<String> filtersId = null;
         List<String> filtersName = null;
@@ -74,22 +68,9 @@ public class SchedulesApiTest {
         Integer limit = null;
         Integer offset = null;
         String fields = null;
-        ListSchedules response = api.listAccountSchedules(accountId, filtersId, filtersName, sortId, sortName, limit, offset, fields);
-        assertNotNull(response.getFilters());
-        List<ScheduleFull> items = response.getItems();
-		assertNotNull(items);
-        assertNotNull(response.getLimit());
-        assertNotNull(response.getOffset());
-        assertNotNull(response.getSort());
-        assertNotNull(response.getTotal());
+        ListSchedulesFull response = api.listAccountSchedules(accountId, filtersId, filtersName, sortId, sortName, limit, offset, fields);
 
-        if (items.size() > 0) {
-	        Integer firstItemId = items.get(0).getId();
-			ScheduleFull schedule = api.getAccountSchedule(accountId, firstItemId);
-			assertNotNull(schedule);
-			assertNotNull(schedule.getId());
-			assertNotNull(schedule.getName());
-        }
+        // TODO: test validations
     }
     
 }

@@ -17,17 +17,24 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * FilterIdArray
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class FilterIdArray {
   @SerializedName("id")
-  private String id = null;
+  private List<String> id = new ArrayList<String>();
 
-  public FilterIdArray id(String id) {
+  public FilterIdArray id(List<String> id) {
     this.id = id;
+    return this;
+  }
+
+  public FilterIdArray addIdItem(String idItem) {
+    this.id.add(idItem);
     return this;
   }
 
@@ -36,11 +43,11 @@ public class FilterIdArray {
    * @return id
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getId() {
+  public List<String> getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(List<String> id) {
     this.id = id;
   }
 

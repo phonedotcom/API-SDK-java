@@ -26,7 +26,7 @@ import org.joda.time.DateTime;
  * The Full SMS Object is identical to the SMS Summary Object. See above for details.
  */
 @ApiModel(description = "The Full SMS Object is identical to the SMS Summary Object. See above for details.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class SmsFull {
   @SerializedName("id")
   private String id = null;

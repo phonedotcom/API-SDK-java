@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 Delete an individual menu
 
-See Account Menus for more info on the properties.
+This service shows the details of an individual menu.
 
 ### Example
 ```java
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 <a name="listAccountMenus"></a>
 # **listAccountMenus**
-> ListMenus listAccountMenus(accountId, filtersId, filtersName, sortId, sortName, limit, offset, fields)
+> ListMenusFull listAccountMenus(accountId, filtersId, filtersName, sortId, sortName, limit, offset, fields)
 
 Get a list of menus for an account
 
@@ -217,7 +217,7 @@ Integer limit = 56; // Integer | Max results
 Integer offset = 56; // Integer | Results to skip
 String fields = "fields_example"; // String | Field set
 try {
-    ListMenus result = apiInstance.listAccountMenus(accountId, filtersId, filtersName, sortId, sortName, limit, offset, fields);
+    ListMenusFull result = apiInstance.listAccountMenus(accountId, filtersId, filtersName, sortId, sortName, limit, offset, fields);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MenusApi#listAccountMenus");
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListMenus**](ListMenus.md)
+[**ListMenusFull**](ListMenusFull.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 Replace an individual menu
 
-See Account Menus for more info on the properties.
+This service replaces the details of an individual Menu.
 
 ### Example
 ```java

@@ -29,7 +29,7 @@ import java.io.IOException;
 
 import io.swagger.client.model.CreateMenuParams;
 import io.swagger.client.model.DeleteMenu;
-import io.swagger.client.model.ListMenus;
+import io.swagger.client.model.ListMenusFull;
 import io.swagger.client.model.MenuFull;
 import io.swagger.client.model.ReplaceMenuParams;
 
@@ -248,7 +248,7 @@ public class MenusApi {
 
     /**
      * Delete an individual menu
-     * See Account Menus for more info on the properties.
+     * This service shows the details of an individual menu.
      * @param accountId Account ID (required)
      * @param menuId Menu ID (required)
      * @return DeleteMenu
@@ -261,7 +261,7 @@ public class MenusApi {
 
     /**
      * Delete an individual menu
-     * See Account Menus for more info on the properties.
+     * This service shows the details of an individual menu.
      * @param accountId Account ID (required)
      * @param menuId Menu ID (required)
      * @return ApiResponse&lt;DeleteMenu&gt;
@@ -275,7 +275,7 @@ public class MenusApi {
 
     /**
      * Delete an individual menu (asynchronously)
-     * See Account Menus for more info on the properties.
+     * This service shows the details of an individual menu.
      * @param accountId Account ID (required)
      * @param menuId Menu ID (required)
      * @param callback The callback to be executed when the API call finishes
@@ -521,11 +521,11 @@ public class MenusApi {
      * @param limit Max results (optional)
      * @param offset Results to skip (optional)
      * @param fields Field set (optional)
-     * @return ListMenus
+     * @return ListMenusFull
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ListMenus listAccountMenus(Integer accountId, List<String> filtersId, List<String> filtersName, String sortId, String sortName, Integer limit, Integer offset, String fields) throws ApiException {
-        ApiResponse<ListMenus> resp = listAccountMenusWithHttpInfo(accountId, filtersId, filtersName, sortId, sortName, limit, offset, fields);
+    public ListMenusFull listAccountMenus(Integer accountId, List<String> filtersId, List<String> filtersName, String sortId, String sortName, Integer limit, Integer offset, String fields) throws ApiException {
+        ApiResponse<ListMenusFull> resp = listAccountMenusWithHttpInfo(accountId, filtersId, filtersName, sortId, sortName, limit, offset, fields);
         return resp.getData();
     }
 
@@ -540,12 +540,12 @@ public class MenusApi {
      * @param limit Max results (optional)
      * @param offset Results to skip (optional)
      * @param fields Field set (optional)
-     * @return ApiResponse&lt;ListMenus&gt;
+     * @return ApiResponse&lt;ListMenusFull&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ListMenus> listAccountMenusWithHttpInfo(Integer accountId, List<String> filtersId, List<String> filtersName, String sortId, String sortName, Integer limit, Integer offset, String fields) throws ApiException {
+    public ApiResponse<ListMenusFull> listAccountMenusWithHttpInfo(Integer accountId, List<String> filtersId, List<String> filtersName, String sortId, String sortName, Integer limit, Integer offset, String fields) throws ApiException {
         com.squareup.okhttp.Call call = listAccountMenusValidateBeforeCall(accountId, filtersId, filtersName, sortId, sortName, limit, offset, fields, null, null);
-        Type localVarReturnType = new TypeToken<ListMenus>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListMenusFull>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -564,7 +564,7 @@ public class MenusApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listAccountMenusAsync(Integer accountId, List<String> filtersId, List<String> filtersName, String sortId, String sortName, Integer limit, Integer offset, String fields, final ApiCallback<ListMenus> callback) throws ApiException {
+    public com.squareup.okhttp.Call listAccountMenusAsync(Integer accountId, List<String> filtersId, List<String> filtersName, String sortId, String sortName, Integer limit, Integer offset, String fields, final ApiCallback<ListMenusFull> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -586,7 +586,7 @@ public class MenusApi {
         }
 
         com.squareup.okhttp.Call call = listAccountMenusValidateBeforeCall(accountId, filtersId, filtersName, sortId, sortName, limit, offset, fields, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ListMenus>(){}.getType();
+        Type localVarReturnType = new TypeToken<ListMenusFull>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -658,7 +658,7 @@ public class MenusApi {
 
     /**
      * Replace an individual menu
-     * See Account Menus for more info on the properties.
+     * This service replaces the details of an individual Menu.
      * @param accountId Account ID (required)
      * @param menuId Menu ID (required)
      * @param data Menu data (optional)
@@ -672,7 +672,7 @@ public class MenusApi {
 
     /**
      * Replace an individual menu
-     * See Account Menus for more info on the properties.
+     * This service replaces the details of an individual Menu.
      * @param accountId Account ID (required)
      * @param menuId Menu ID (required)
      * @param data Menu data (optional)
@@ -687,7 +687,7 @@ public class MenusApi {
 
     /**
      * Replace an individual menu (asynchronously)
-     * See Account Menus for more info on the properties.
+     * This service replaces the details of an individual Menu.
      * @param accountId Account ID (required)
      * @param menuId Menu ID (required)
      * @param data Menu data (optional)

@@ -17,14 +17,13 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.CallNotifications;
-import io.swagger.client.model.CallerIdPhoneNumber;
-import io.swagger.client.model.SmsForwardingParams;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * CreatePhoneNumberParams
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class CreatePhoneNumberParams {
   @SerializedName("phone_number")
   private Object phoneNumber = null;
@@ -41,14 +40,26 @@ public class CreatePhoneNumberParams {
   @SerializedName("block_anonymous")
   private Boolean blockAnonymous = null;
 
-  @SerializedName("caller_id")
-  private CallerIdPhoneNumber callerId = null;
+  @SerializedName("caller_id[name]")
+  private String callerIdName = null;
 
-  @SerializedName("sms_forwarding")
-  private SmsForwardingParams smsForwarding = null;
+  @SerializedName("caller_id[type]")
+  private String callerIdType = null;
 
-  @SerializedName("call_notifications")
-  private CallNotifications callNotifications = null;
+  @SerializedName("sms_forwarding[type]")
+  private String smsForwardingType = null;
+
+  @SerializedName("sms_forwarding[application]")
+  private Object smsForwardingApplication = null;
+
+  @SerializedName("sms_forwarding[extension]")
+  private Object smsForwardingExtension = null;
+
+  @SerializedName("call_notifications[emails]")
+  private List<String> callNotificationsEmails = new ArrayList<String>();
+
+  @SerializedName("call_notifications[sms]")
+  private String callNotificationsSms = null;
 
   public CreatePhoneNumberParams phoneNumber(Object phoneNumber) {
     this.phoneNumber = phoneNumber;
@@ -140,58 +151,135 @@ public class CreatePhoneNumberParams {
     this.blockAnonymous = blockAnonymous;
   }
 
-  public CreatePhoneNumberParams callerId(CallerIdPhoneNumber callerId) {
-    this.callerId = callerId;
+  public CreatePhoneNumberParams callerIdName(String callerIdName) {
+    this.callerIdName = callerIdName;
     return this;
   }
 
    /**
-   * Caller ID object
-   * @return callerId
+   * Caller ID name
+   * @return callerIdName
   **/
-  @ApiModelProperty(example = "null", value = "Caller ID object")
-  public CallerIdPhoneNumber getCallerId() {
-    return callerId;
+  @ApiModelProperty(example = "null", value = "Caller ID name")
+  public String getCallerIdName() {
+    return callerIdName;
   }
 
-  public void setCallerId(CallerIdPhoneNumber callerId) {
-    this.callerId = callerId;
+  public void setCallerIdName(String callerIdName) {
+    this.callerIdName = callerIdName;
   }
 
-  public CreatePhoneNumberParams smsForwarding(SmsForwardingParams smsForwarding) {
-    this.smsForwarding = smsForwarding;
+  public CreatePhoneNumberParams callerIdType(String callerIdType) {
+    this.callerIdType = callerIdType;
     return this;
   }
 
    /**
-   * SMS Forwarding Object, or NULL
-   * @return smsForwarding
+   * Caller ID type
+   * @return callerIdType
   **/
-  @ApiModelProperty(example = "null", value = "SMS Forwarding Object, or NULL")
-  public SmsForwardingParams getSmsForwarding() {
-    return smsForwarding;
+  @ApiModelProperty(example = "null", value = "Caller ID type")
+  public String getCallerIdType() {
+    return callerIdType;
   }
 
-  public void setSmsForwarding(SmsForwardingParams smsForwarding) {
-    this.smsForwarding = smsForwarding;
+  public void setCallerIdType(String callerIdType) {
+    this.callerIdType = callerIdType;
   }
 
-  public CreatePhoneNumberParams callNotifications(CallNotifications callNotifications) {
-    this.callNotifications = callNotifications;
+  public CreatePhoneNumberParams smsForwardingType(String smsForwardingType) {
+    this.smsForwardingType = smsForwardingType;
     return this;
   }
 
    /**
-   * Call Notifications object
-   * @return callNotifications
+   * 'application' or 'extension'
+   * @return smsForwardingType
   **/
-  @ApiModelProperty(example = "null", value = "Call Notifications object")
-  public CallNotifications getCallNotifications() {
-    return callNotifications;
+  @ApiModelProperty(example = "null", value = "'application' or 'extension'")
+  public String getSmsForwardingType() {
+    return smsForwardingType;
   }
 
-  public void setCallNotifications(CallNotifications callNotifications) {
-    this.callNotifications = callNotifications;
+  public void setSmsForwardingType(String smsForwardingType) {
+    this.smsForwardingType = smsForwardingType;
+  }
+
+  public CreatePhoneNumberParams smsForwardingApplication(Object smsForwardingApplication) {
+    this.smsForwardingApplication = smsForwardingApplication;
+    return this;
+  }
+
+   /**
+   * Application lookup object
+   * @return smsForwardingApplication
+  **/
+  @ApiModelProperty(example = "null", value = "Application lookup object")
+  public Object getSmsForwardingApplication() {
+    return smsForwardingApplication;
+  }
+
+  public void setSmsForwardingApplication(Object smsForwardingApplication) {
+    this.smsForwardingApplication = smsForwardingApplication;
+  }
+
+  public CreatePhoneNumberParams smsForwardingExtension(Object smsForwardingExtension) {
+    this.smsForwardingExtension = smsForwardingExtension;
+    return this;
+  }
+
+   /**
+   * Extension lookup object
+   * @return smsForwardingExtension
+  **/
+  @ApiModelProperty(example = "null", value = "Extension lookup object")
+  public Object getSmsForwardingExtension() {
+    return smsForwardingExtension;
+  }
+
+  public void setSmsForwardingExtension(Object smsForwardingExtension) {
+    this.smsForwardingExtension = smsForwardingExtension;
+  }
+
+  public CreatePhoneNumberParams callNotificationsEmails(List<String> callNotificationsEmails) {
+    this.callNotificationsEmails = callNotificationsEmails;
+    return this;
+  }
+
+  public CreatePhoneNumberParams addCallNotificationsEmailsItem(String callNotificationsEmailsItem) {
+    this.callNotificationsEmails.add(callNotificationsEmailsItem);
+    return this;
+  }
+
+   /**
+   * Call notifications for emails. Can be a single email or an array of emails
+   * @return callNotificationsEmails
+  **/
+  @ApiModelProperty(example = "null", value = "Call notifications for emails. Can be a single email or an array of emails")
+  public List<String> getCallNotificationsEmails() {
+    return callNotificationsEmails;
+  }
+
+  public void setCallNotificationsEmails(List<String> callNotificationsEmails) {
+    this.callNotificationsEmails = callNotificationsEmails;
+  }
+
+  public CreatePhoneNumberParams callNotificationsSms(String callNotificationsSms) {
+    this.callNotificationsSms = callNotificationsSms;
+    return this;
+  }
+
+   /**
+   * Call notification for SMS
+   * @return callNotificationsSms
+  **/
+  @ApiModelProperty(example = "null", value = "Call notification for SMS")
+  public String getCallNotificationsSms() {
+    return callNotificationsSms;
+  }
+
+  public void setCallNotificationsSms(String callNotificationsSms) {
+    this.callNotificationsSms = callNotificationsSms;
   }
 
 
@@ -209,14 +297,18 @@ public class CreatePhoneNumberParams {
         Objects.equals(this.name, createPhoneNumberParams.name) &&
         Objects.equals(this.blockIncoming, createPhoneNumberParams.blockIncoming) &&
         Objects.equals(this.blockAnonymous, createPhoneNumberParams.blockAnonymous) &&
-        Objects.equals(this.callerId, createPhoneNumberParams.callerId) &&
-        Objects.equals(this.smsForwarding, createPhoneNumberParams.smsForwarding) &&
-        Objects.equals(this.callNotifications, createPhoneNumberParams.callNotifications);
+        Objects.equals(this.callerIdName, createPhoneNumberParams.callerIdName) &&
+        Objects.equals(this.callerIdType, createPhoneNumberParams.callerIdType) &&
+        Objects.equals(this.smsForwardingType, createPhoneNumberParams.smsForwardingType) &&
+        Objects.equals(this.smsForwardingApplication, createPhoneNumberParams.smsForwardingApplication) &&
+        Objects.equals(this.smsForwardingExtension, createPhoneNumberParams.smsForwardingExtension) &&
+        Objects.equals(this.callNotificationsEmails, createPhoneNumberParams.callNotificationsEmails) &&
+        Objects.equals(this.callNotificationsSms, createPhoneNumberParams.callNotificationsSms);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(phoneNumber, route, name, blockIncoming, blockAnonymous, callerId, smsForwarding, callNotifications);
+    return Objects.hash(phoneNumber, route, name, blockIncoming, blockAnonymous, callerIdName, callerIdType, smsForwardingType, smsForwardingApplication, smsForwardingExtension, callNotificationsEmails, callNotificationsSms);
   }
 
 
@@ -230,9 +322,13 @@ public class CreatePhoneNumberParams {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    blockIncoming: ").append(toIndentedString(blockIncoming)).append("\n");
     sb.append("    blockAnonymous: ").append(toIndentedString(blockAnonymous)).append("\n");
-    sb.append("    callerId: ").append(toIndentedString(callerId)).append("\n");
-    sb.append("    smsForwarding: ").append(toIndentedString(smsForwarding)).append("\n");
-    sb.append("    callNotifications: ").append(toIndentedString(callNotifications)).append("\n");
+    sb.append("    callerIdName: ").append(toIndentedString(callerIdName)).append("\n");
+    sb.append("    callerIdType: ").append(toIndentedString(callerIdType)).append("\n");
+    sb.append("    smsForwardingType: ").append(toIndentedString(smsForwardingType)).append("\n");
+    sb.append("    smsForwardingApplication: ").append(toIndentedString(smsForwardingApplication)).append("\n");
+    sb.append("    smsForwardingExtension: ").append(toIndentedString(smsForwardingExtension)).append("\n");
+    sb.append("    callNotificationsEmails: ").append(toIndentedString(callNotificationsEmails)).append("\n");
+    sb.append("    callNotificationsSms: ").append(toIndentedString(callNotificationsSms)).append("\n");
     sb.append("}");
     return sb.toString();
   }

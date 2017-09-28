@@ -19,15 +19,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.HoldMusic;
 import io.swagger.client.model.MediaSummary;
-import io.swagger.client.model.Member;
-import java.util.ArrayList;
-import java.util.List;
+import io.swagger.client.model.Members;
 
 /**
  * The Full QueueObject has the same properties as the Queue Summary Object, along with the following:
  */
 @ApiModel(description = "The Full QueueObject has the same properties as the Queue Summary Object, along with the following:")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class QueueFull {
   @SerializedName("id")
   private Integer id = null;
@@ -51,7 +49,7 @@ public class QueueFull {
   private Integer ringTime = null;
 
   @SerializedName("members")
-  private List<Member> members = new ArrayList<Member>();
+  private Members members = null;
 
   public QueueFull id(Integer id) {
     this.id = id;
@@ -179,26 +177,21 @@ public class QueueFull {
     this.ringTime = ringTime;
   }
 
-  public QueueFull members(List<Member> members) {
+  public QueueFull members(Members members) {
     this.members = members;
     return this;
   }
 
-  public QueueFull addMembersItem(Member membersItem) {
-    this.members.add(membersItem);
-    return this;
-  }
-
    /**
-   * Array of Member Objects. Non-virtual account extensions or phone numbers. See below for details.
+   * Get members
    * @return members
   **/
-  @ApiModelProperty(example = "null", value = "Array of Member Objects. Non-virtual account extensions or phone numbers. See below for details.")
-  public List<Member> getMembers() {
+  @ApiModelProperty(example = "null", value = "")
+  public Members getMembers() {
     return members;
   }
 
-  public void setMembers(List<Member> members) {
+  public void setMembers(Members members) {
     this.members = members;
   }
 

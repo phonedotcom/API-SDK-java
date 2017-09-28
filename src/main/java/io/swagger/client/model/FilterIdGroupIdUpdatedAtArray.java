@@ -17,23 +17,30 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * FilterIdGroupIdUpdatedAtArray
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class FilterIdGroupIdUpdatedAtArray {
   @SerializedName("id")
-  private String id = null;
+  private List<String> id = new ArrayList<String>();
 
   @SerializedName("group_id")
-  private String groupId = null;
+  private List<String> groupId = new ArrayList<String>();
 
   @SerializedName("updated_at")
-  private String updatedAt = null;
+  private List<String> updatedAt = new ArrayList<String>();
 
-  public FilterIdGroupIdUpdatedAtArray id(String id) {
+  public FilterIdGroupIdUpdatedAtArray id(List<String> id) {
     this.id = id;
+    return this;
+  }
+
+  public FilterIdGroupIdUpdatedAtArray addIdItem(String idItem) {
+    this.id.add(idItem);
     return this;
   }
 
@@ -42,16 +49,21 @@ public class FilterIdGroupIdUpdatedAtArray {
    * @return id
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getId() {
+  public List<String> getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(List<String> id) {
     this.id = id;
   }
 
-  public FilterIdGroupIdUpdatedAtArray groupId(String groupId) {
+  public FilterIdGroupIdUpdatedAtArray groupId(List<String> groupId) {
     this.groupId = groupId;
+    return this;
+  }
+
+  public FilterIdGroupIdUpdatedAtArray addGroupIdItem(String groupIdItem) {
+    this.groupId.add(groupIdItem);
     return this;
   }
 
@@ -60,16 +72,21 @@ public class FilterIdGroupIdUpdatedAtArray {
    * @return groupId
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getGroupId() {
+  public List<String> getGroupId() {
     return groupId;
   }
 
-  public void setGroupId(String groupId) {
+  public void setGroupId(List<String> groupId) {
     this.groupId = groupId;
   }
 
-  public FilterIdGroupIdUpdatedAtArray updatedAt(String updatedAt) {
+  public FilterIdGroupIdUpdatedAtArray updatedAt(List<String> updatedAt) {
     this.updatedAt = updatedAt;
+    return this;
+  }
+
+  public FilterIdGroupIdUpdatedAtArray addUpdatedAtItem(String updatedAtItem) {
+    this.updatedAt.add(updatedAtItem);
     return this;
   }
 
@@ -78,11 +95,11 @@ public class FilterIdGroupIdUpdatedAtArray {
    * @return updatedAt
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getUpdatedAt() {
+  public List<String> getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(String updatedAt) {
+  public void setUpdatedAt(List<String> updatedAt) {
     this.updatedAt = updatedAt;
   }
 

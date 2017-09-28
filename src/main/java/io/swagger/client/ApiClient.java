@@ -161,7 +161,11 @@ public class ApiClient {
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, Authentication>();
-        authentications.put("apiKey", new ApiKeyAuth("header", "Authorization"));
+        final ApiKeyAuth value = new ApiKeyAuth("header", "Authorization");
+        // set api key
+        value.setApiKey("FJxqBQcorvEVFPpDVPuZAeYdT5kMrWo1cFxwGE7u");
+        value.setApiKeyPrefix("Bearer");
+        authentications.put("apiKey", value);
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }
@@ -729,7 +733,7 @@ public class ApiClient {
      * @return True if the given MIME is JSON, false otherwise.
      */
     public boolean isJsonMime(String mime) {
-    	return mime != null && mime.matches("(?i)application\\/(.*)json(;.*)?");
+      return mime != null && mime.matches("(?i)application\\/(.*)json(;.*)?");
     }
 
     /**

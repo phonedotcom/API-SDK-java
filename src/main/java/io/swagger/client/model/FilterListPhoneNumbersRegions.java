@@ -17,35 +17,42 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * FilterListPhoneNumbersRegions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class FilterListPhoneNumbersRegions {
   @SerializedName("country_code")
-  private String countryCode = null;
+  private List<String> countryCode = new ArrayList<String>();
 
   @SerializedName("npa")
-  private String npa = null;
+  private List<Integer> npa = new ArrayList<Integer>();
 
   @SerializedName("nxx")
-  private String nxx = null;
+  private List<String> nxx = new ArrayList<String>();
 
   @SerializedName("is_toll_free")
-  private String isTollFree = null;
+  private List<String> isTollFree = new ArrayList<String>();
 
   @SerializedName("city")
-  private String city = null;
+  private List<String> city = new ArrayList<String>();
 
   @SerializedName("province_postal_code")
-  private String provincePostalCode = null;
+  private List<String> provincePostalCode = new ArrayList<String>();
 
   @SerializedName("country_postal_code")
-  private String countryPostalCode = null;
+  private List<String> countryPostalCode = new ArrayList<String>();
 
-  public FilterListPhoneNumbersRegions countryCode(String countryCode) {
+  public FilterListPhoneNumbersRegions countryCode(List<String> countryCode) {
     this.countryCode = countryCode;
+    return this;
+  }
+
+  public FilterListPhoneNumbersRegions addCountryCodeItem(String countryCodeItem) {
+    this.countryCode.add(countryCodeItem);
     return this;
   }
 
@@ -54,16 +61,21 @@ public class FilterListPhoneNumbersRegions {
    * @return countryCode
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getCountryCode() {
+  public List<String> getCountryCode() {
     return countryCode;
   }
 
-  public void setCountryCode(String countryCode) {
+  public void setCountryCode(List<String> countryCode) {
     this.countryCode = countryCode;
   }
 
-  public FilterListPhoneNumbersRegions npa(String npa) {
+  public FilterListPhoneNumbersRegions npa(List<Integer> npa) {
     this.npa = npa;
+    return this;
+  }
+
+  public FilterListPhoneNumbersRegions addNpaItem(Integer npaItem) {
+    this.npa.add(npaItem);
     return this;
   }
 
@@ -72,16 +84,21 @@ public class FilterListPhoneNumbersRegions {
    * @return npa
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getNpa() {
+  public List<Integer> getNpa() {
     return npa;
   }
 
-  public void setNpa(String npa) {
+  public void setNpa(List<Integer> npa) {
     this.npa = npa;
   }
 
-  public FilterListPhoneNumbersRegions nxx(String nxx) {
+  public FilterListPhoneNumbersRegions nxx(List<String> nxx) {
     this.nxx = nxx;
+    return this;
+  }
+
+  public FilterListPhoneNumbersRegions addNxxItem(String nxxItem) {
+    this.nxx.add(nxxItem);
     return this;
   }
 
@@ -90,16 +107,21 @@ public class FilterListPhoneNumbersRegions {
    * @return nxx
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getNxx() {
+  public List<String> getNxx() {
     return nxx;
   }
 
-  public void setNxx(String nxx) {
+  public void setNxx(List<String> nxx) {
     this.nxx = nxx;
   }
 
-  public FilterListPhoneNumbersRegions isTollFree(String isTollFree) {
+  public FilterListPhoneNumbersRegions isTollFree(List<String> isTollFree) {
     this.isTollFree = isTollFree;
+    return this;
+  }
+
+  public FilterListPhoneNumbersRegions addIsTollFreeItem(String isTollFreeItem) {
+    this.isTollFree.add(isTollFreeItem);
     return this;
   }
 
@@ -108,16 +130,21 @@ public class FilterListPhoneNumbersRegions {
    * @return isTollFree
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getIsTollFree() {
+  public List<String> getIsTollFree() {
     return isTollFree;
   }
 
-  public void setIsTollFree(String isTollFree) {
+  public void setIsTollFree(List<String> isTollFree) {
     this.isTollFree = isTollFree;
   }
 
-  public FilterListPhoneNumbersRegions city(String city) {
+  public FilterListPhoneNumbersRegions city(List<String> city) {
     this.city = city;
+    return this;
+  }
+
+  public FilterListPhoneNumbersRegions addCityItem(String cityItem) {
+    this.city.add(cityItem);
     return this;
   }
 
@@ -126,16 +153,21 @@ public class FilterListPhoneNumbersRegions {
    * @return city
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getCity() {
+  public List<String> getCity() {
     return city;
   }
 
-  public void setCity(String city) {
+  public void setCity(List<String> city) {
     this.city = city;
   }
 
-  public FilterListPhoneNumbersRegions provincePostalCode(String provincePostalCode) {
+  public FilterListPhoneNumbersRegions provincePostalCode(List<String> provincePostalCode) {
     this.provincePostalCode = provincePostalCode;
+    return this;
+  }
+
+  public FilterListPhoneNumbersRegions addProvincePostalCodeItem(String provincePostalCodeItem) {
+    this.provincePostalCode.add(provincePostalCodeItem);
     return this;
   }
 
@@ -144,16 +176,21 @@ public class FilterListPhoneNumbersRegions {
    * @return provincePostalCode
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getProvincePostalCode() {
+  public List<String> getProvincePostalCode() {
     return provincePostalCode;
   }
 
-  public void setProvincePostalCode(String provincePostalCode) {
+  public void setProvincePostalCode(List<String> provincePostalCode) {
     this.provincePostalCode = provincePostalCode;
   }
 
-  public FilterListPhoneNumbersRegions countryPostalCode(String countryPostalCode) {
+  public FilterListPhoneNumbersRegions countryPostalCode(List<String> countryPostalCode) {
     this.countryPostalCode = countryPostalCode;
+    return this;
+  }
+
+  public FilterListPhoneNumbersRegions addCountryPostalCodeItem(String countryPostalCodeItem) {
+    this.countryPostalCode.add(countryPostalCodeItem);
     return this;
   }
 
@@ -162,11 +199,11 @@ public class FilterListPhoneNumbersRegions {
    * @return countryPostalCode
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getCountryPostalCode() {
+  public List<String> getCountryPostalCode() {
     return countryPostalCode;
   }
 
-  public void setCountryPostalCode(String countryPostalCode) {
+  public void setCountryPostalCode(List<String> countryPostalCode) {
     this.countryPostalCode = countryPostalCode;
   }
 

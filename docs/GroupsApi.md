@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 <a name="listAccountExtensionContactGroups"></a>
 # **listAccountExtensionContactGroups**
-> ListGroups listAccountExtensionContactGroups(accountId, extensionId, filtersId, filtersName, sortId, sortName, limit, offset, fields)
+> ListGroupsFull listAccountExtensionContactGroups(accountId, extensionId, filtersId, filtersName, sortId, sortName, limit, offset, fields)
 
 Show a list of contact groups belonging to an extension
 
@@ -224,7 +224,7 @@ Integer limit = 56; // Integer | Max results
 Integer offset = 56; // Integer | Results to skip
 String fields = "fields_example"; // String | Field set
 try {
-    ListGroups result = apiInstance.listAccountExtensionContactGroups(accountId, extensionId, filtersId, filtersName, sortId, sortName, limit, offset, fields);
+    ListGroupsFull result = apiInstance.listAccountExtensionContactGroups(accountId, extensionId, filtersId, filtersName, sortId, sortName, limit, offset, fields);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GroupsApi#listAccountExtensionContactGroups");
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListGroups**](ListGroups.md)
+[**ListGroupsFull**](ListGroupsFull.md)
 
 ### Authorization
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 <a name="replaceAccountExtensionContactGroup"></a>
 # **replaceAccountExtensionContactGroup**
-> GroupFull replaceAccountExtensionContactGroup(accountId, extensionId, groupId, data)
+> GroupFull replaceAccountExtensionContactGroup(accountId, extensionId, groupId)
 
 
 
@@ -288,9 +288,8 @@ GroupsApi apiInstance = new GroupsApi();
 Integer accountId = 56; // Integer | Account ID
 Integer extensionId = 56; // Integer | Extension ID
 Integer groupId = 56; // Integer | Group ID
-CreateGroupParams data = new CreateGroupParams(); // CreateGroupParams | Group name
 try {
-    GroupFull result = apiInstance.replaceAccountExtensionContactGroup(accountId, extensionId, groupId, data);
+    GroupFull result = apiInstance.replaceAccountExtensionContactGroup(accountId, extensionId, groupId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GroupsApi#replaceAccountExtensionContactGroup");
@@ -305,7 +304,6 @@ Name | Type | Description  | Notes
  **accountId** | **Integer**| Account ID |
  **extensionId** | **Integer**| Extension ID |
  **groupId** | **Integer**| Group ID |
- **data** | [**CreateGroupParams**](CreateGroupParams.md)| Group name |
 
 ### Return type
 

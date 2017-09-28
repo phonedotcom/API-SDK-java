@@ -26,7 +26,7 @@ import java.util.List;
  * The Full Call Log Object includes the properties in the Call Log Summary Object, along with the following:
  */
 @ApiModel(description = "The Full Call Log Object includes the properties in the Call Log Summary Object, along with the following:")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class CallLogFull {
   @SerializedName("id")
   private String id = null;

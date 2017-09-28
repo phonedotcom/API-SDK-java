@@ -17,18 +17,16 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.AddressListContacts;
-import io.swagger.client.model.Email;
+import io.swagger.client.model.Addresses;
+import io.swagger.client.model.Emails;
 import io.swagger.client.model.GroupListContacts;
 import io.swagger.client.model.PhoneNumberContact;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The Full Contact Object includes all of the properties in the Contact Summary Object, along with several more:
  */
 @ApiModel(description = "The Full Contact Object includes all of the properties in the Contact Summary Object, along with several more:")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class ContactFull {
   @SerializedName("id")
   private Integer id = null;
@@ -70,13 +68,13 @@ public class ContactFull {
   private String jobTitle = null;
 
   @SerializedName("emails")
-  private List<Email> emails = new ArrayList<Email>();
+  private Emails emails = null;
 
   @SerializedName("phone_numbers")
-  private List<PhoneNumberContact> phoneNumbers = new ArrayList<PhoneNumberContact>();
+  private PhoneNumberContact phoneNumbers = null;
 
   @SerializedName("addresses")
-  private List<AddressListContacts> addresses = new ArrayList<AddressListContacts>();
+  private Addresses addresses = null;
 
   @SerializedName("group")
   private GroupListContacts group = null;
@@ -321,72 +319,57 @@ public class ContactFull {
     this.jobTitle = jobTitle;
   }
 
-  public ContactFull emails(List<Email> emails) {
+  public ContactFull emails(Emails emails) {
     this.emails = emails;
     return this;
   }
 
-  public ContactFull addEmailsItem(Email emailsItem) {
-    this.emails.add(emailsItem);
-    return this;
-  }
-
    /**
-   * Array of Contact Email Objects. See below for details.
+   * Get emails
    * @return emails
   **/
-  @ApiModelProperty(example = "null", value = "Array of Contact Email Objects. See below for details.")
-  public List<Email> getEmails() {
+  @ApiModelProperty(example = "null", value = "")
+  public Emails getEmails() {
     return emails;
   }
 
-  public void setEmails(List<Email> emails) {
+  public void setEmails(Emails emails) {
     this.emails = emails;
   }
 
-  public ContactFull phoneNumbers(List<PhoneNumberContact> phoneNumbers) {
+  public ContactFull phoneNumbers(PhoneNumberContact phoneNumbers) {
     this.phoneNumbers = phoneNumbers;
-    return this;
-  }
-
-  public ContactFull addPhoneNumbersItem(PhoneNumberContact phoneNumbersItem) {
-    this.phoneNumbers.add(phoneNumbersItem);
     return this;
   }
 
    /**
-   * Array of Contact Phone Number Objects. See below for details.
+   * Get phoneNumbers
    * @return phoneNumbers
   **/
-  @ApiModelProperty(example = "null", value = "Array of Contact Phone Number Objects. See below for details.")
-  public List<PhoneNumberContact> getPhoneNumbers() {
+  @ApiModelProperty(example = "null", value = "")
+  public PhoneNumberContact getPhoneNumbers() {
     return phoneNumbers;
   }
 
-  public void setPhoneNumbers(List<PhoneNumberContact> phoneNumbers) {
+  public void setPhoneNumbers(PhoneNumberContact phoneNumbers) {
     this.phoneNumbers = phoneNumbers;
   }
 
-  public ContactFull addresses(List<AddressListContacts> addresses) {
+  public ContactFull addresses(Addresses addresses) {
     this.addresses = addresses;
     return this;
   }
 
-  public ContactFull addAddressesItem(AddressListContacts addressesItem) {
-    this.addresses.add(addressesItem);
-    return this;
-  }
-
    /**
-   * Array of Contact Address Objects. See below for details.
+   * Get addresses
    * @return addresses
   **/
-  @ApiModelProperty(example = "null", value = "Array of Contact Address Objects. See below for details.")
-  public List<AddressListContacts> getAddresses() {
+  @ApiModelProperty(example = "null", value = "")
+  public Addresses getAddresses() {
     return addresses;
   }
 
-  public void setAddresses(List<AddressListContacts> addresses) {
+  public void setAddresses(Addresses addresses) {
     this.addresses = addresses;
   }
 

@@ -17,17 +17,19 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * FilterCallLogs
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class FilterCallLogs {
   @SerializedName("id")
-  private String id = null;
+  private List<String> id = new ArrayList<String>();
 
   @SerializedName("start_time")
-  private String startTime = null;
+  private List<String> startTime = new ArrayList<String>();
 
   @SerializedName("created_at")
   private String createdAt = null;
@@ -41,8 +43,13 @@ public class FilterCallLogs {
   @SerializedName("type")
   private String type = null;
 
-  public FilterCallLogs id(String id) {
+  public FilterCallLogs id(List<String> id) {
     this.id = id;
+    return this;
+  }
+
+  public FilterCallLogs addIdItem(String idItem) {
+    this.id.add(idItem);
     return this;
   }
 
@@ -51,16 +58,21 @@ public class FilterCallLogs {
    * @return id
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getId() {
+  public List<String> getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(List<String> id) {
     this.id = id;
   }
 
-  public FilterCallLogs startTime(String startTime) {
+  public FilterCallLogs startTime(List<String> startTime) {
     this.startTime = startTime;
+    return this;
+  }
+
+  public FilterCallLogs addStartTimeItem(String startTimeItem) {
+    this.startTime.add(startTimeItem);
     return this;
   }
 
@@ -69,11 +81,11 @@ public class FilterCallLogs {
    * @return startTime
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getStartTime() {
+  public List<String> getStartTime() {
     return startTime;
   }
 
-  public void setStartTime(String startTime) {
+  public void setStartTime(List<String> startTime) {
     this.startTime = startTime;
   }
 

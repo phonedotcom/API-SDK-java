@@ -17,23 +17,30 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * FilterIdExtensionNameArray
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class FilterIdExtensionNameArray {
   @SerializedName("id")
-  private String id = null;
+  private List<String> id = new ArrayList<String>();
 
   @SerializedName("extension")
-  private String extension = null;
+  private List<String> extension = new ArrayList<String>();
 
   @SerializedName("name")
-  private String name = null;
+  private List<String> name = new ArrayList<String>();
 
-  public FilterIdExtensionNameArray id(String id) {
+  public FilterIdExtensionNameArray id(List<String> id) {
     this.id = id;
+    return this;
+  }
+
+  public FilterIdExtensionNameArray addIdItem(String idItem) {
+    this.id.add(idItem);
     return this;
   }
 
@@ -42,16 +49,21 @@ public class FilterIdExtensionNameArray {
    * @return id
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getId() {
+  public List<String> getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(List<String> id) {
     this.id = id;
   }
 
-  public FilterIdExtensionNameArray extension(String extension) {
+  public FilterIdExtensionNameArray extension(List<String> extension) {
     this.extension = extension;
+    return this;
+  }
+
+  public FilterIdExtensionNameArray addExtensionItem(String extensionItem) {
+    this.extension.add(extensionItem);
     return this;
   }
 
@@ -60,16 +72,21 @@ public class FilterIdExtensionNameArray {
    * @return extension
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getExtension() {
+  public List<String> getExtension() {
     return extension;
   }
 
-  public void setExtension(String extension) {
+  public void setExtension(List<String> extension) {
     this.extension = extension;
   }
 
-  public FilterIdExtensionNameArray name(String name) {
+  public FilterIdExtensionNameArray name(List<String> name) {
     this.name = name;
+    return this;
+  }
+
+  public FilterIdExtensionNameArray addNameItem(String nameItem) {
+    this.name.add(nameItem);
     return this;
   }
 
@@ -78,11 +95,11 @@ public class FilterIdExtensionNameArray {
    * @return name
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getName() {
+  public List<String> getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(List<String> name) {
     this.name = name;
   }
 

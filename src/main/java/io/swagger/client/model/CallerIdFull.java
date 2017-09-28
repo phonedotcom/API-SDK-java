@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Here are all of the properties you can expect for Caller ID objects:
  */
 @ApiModel(description = "Here are all of the properties you can expect for Caller ID objects:")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class CallerIdFull {
   @SerializedName("number")
   private String number = null;

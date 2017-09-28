@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  |  [optional]
-**extension** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
+**id** | **List&lt;String&gt;** |  |  [optional]
+**extension** | **List&lt;String&gt;** |  |  [optional]
+**name** | **List&lt;String&gt;** |  |  [optional]
 
 
 

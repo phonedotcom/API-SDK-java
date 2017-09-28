@@ -17,23 +17,30 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * FilterIdNamePhoneNumberArray
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class FilterIdNamePhoneNumberArray {
   @SerializedName("id")
-  private String id = null;
+  private List<String> id = new ArrayList<String>();
 
   @SerializedName("name")
-  private String name = null;
+  private List<String> name = new ArrayList<String>();
 
   @SerializedName("phone_number")
-  private String phoneNumber = null;
+  private List<String> phoneNumber = new ArrayList<String>();
 
-  public FilterIdNamePhoneNumberArray id(String id) {
+  public FilterIdNamePhoneNumberArray id(List<String> id) {
     this.id = id;
+    return this;
+  }
+
+  public FilterIdNamePhoneNumberArray addIdItem(String idItem) {
+    this.id.add(idItem);
     return this;
   }
 
@@ -42,16 +49,21 @@ public class FilterIdNamePhoneNumberArray {
    * @return id
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getId() {
+  public List<String> getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(List<String> id) {
     this.id = id;
   }
 
-  public FilterIdNamePhoneNumberArray name(String name) {
+  public FilterIdNamePhoneNumberArray name(List<String> name) {
     this.name = name;
+    return this;
+  }
+
+  public FilterIdNamePhoneNumberArray addNameItem(String nameItem) {
+    this.name.add(nameItem);
     return this;
   }
 
@@ -60,16 +72,21 @@ public class FilterIdNamePhoneNumberArray {
    * @return name
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getName() {
+  public List<String> getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(List<String> name) {
     this.name = name;
   }
 
-  public FilterIdNamePhoneNumberArray phoneNumber(String phoneNumber) {
+  public FilterIdNamePhoneNumberArray phoneNumber(List<String> phoneNumber) {
     this.phoneNumber = phoneNumber;
+    return this;
+  }
+
+  public FilterIdNamePhoneNumberArray addPhoneNumberItem(String phoneNumberItem) {
+    this.phoneNumber.add(phoneNumberItem);
     return this;
   }
 
@@ -78,11 +95,11 @@ public class FilterIdNamePhoneNumberArray {
    * @return phoneNumber
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getPhoneNumber() {
+  public List<String> getPhoneNumber() {
     return phoneNumber;
   }
 
-  public void setPhoneNumber(String phoneNumber) {
+  public void setPhoneNumber(List<String> phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 

@@ -17,44 +17,51 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * FilterListAvailableNumbers
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class FilterListAvailableNumbers {
   @SerializedName("phone_number")
-  private String phoneNumber = null;
+  private List<String> phoneNumber = new ArrayList<String>();
 
   @SerializedName("country_code")
-  private String countryCode = null;
+  private List<String> countryCode = new ArrayList<String>();
 
   @SerializedName("npa")
-  private String npa = null;
+  private List<Integer> npa = new ArrayList<Integer>();
 
   @SerializedName("nxx")
-  private String nxx = null;
+  private List<String> nxx = new ArrayList<String>();
 
   @SerializedName("xxxx")
-  private String xxxx = null;
+  private List<String> xxxx = new ArrayList<String>();
 
   @SerializedName("city")
-  private String city = null;
+  private List<String> city = new ArrayList<String>();
 
   @SerializedName("province")
-  private String province = null;
+  private List<String> province = new ArrayList<String>();
 
   @SerializedName("country")
-  private String country = null;
+  private List<String> country = new ArrayList<String>();
 
   @SerializedName("price")
-  private String price = null;
+  private List<String> price = new ArrayList<String>();
 
   @SerializedName("category")
-  private String category = null;
+  private List<String> category = new ArrayList<String>();
 
-  public FilterListAvailableNumbers phoneNumber(String phoneNumber) {
+  public FilterListAvailableNumbers phoneNumber(List<String> phoneNumber) {
     this.phoneNumber = phoneNumber;
+    return this;
+  }
+
+  public FilterListAvailableNumbers addPhoneNumberItem(String phoneNumberItem) {
+    this.phoneNumber.add(phoneNumberItem);
     return this;
   }
 
@@ -63,16 +70,21 @@ public class FilterListAvailableNumbers {
    * @return phoneNumber
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getPhoneNumber() {
+  public List<String> getPhoneNumber() {
     return phoneNumber;
   }
 
-  public void setPhoneNumber(String phoneNumber) {
+  public void setPhoneNumber(List<String> phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 
-  public FilterListAvailableNumbers countryCode(String countryCode) {
+  public FilterListAvailableNumbers countryCode(List<String> countryCode) {
     this.countryCode = countryCode;
+    return this;
+  }
+
+  public FilterListAvailableNumbers addCountryCodeItem(String countryCodeItem) {
+    this.countryCode.add(countryCodeItem);
     return this;
   }
 
@@ -81,16 +93,21 @@ public class FilterListAvailableNumbers {
    * @return countryCode
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getCountryCode() {
+  public List<String> getCountryCode() {
     return countryCode;
   }
 
-  public void setCountryCode(String countryCode) {
+  public void setCountryCode(List<String> countryCode) {
     this.countryCode = countryCode;
   }
 
-  public FilterListAvailableNumbers npa(String npa) {
+  public FilterListAvailableNumbers npa(List<Integer> npa) {
     this.npa = npa;
+    return this;
+  }
+
+  public FilterListAvailableNumbers addNpaItem(Integer npaItem) {
+    this.npa.add(npaItem);
     return this;
   }
 
@@ -99,16 +116,21 @@ public class FilterListAvailableNumbers {
    * @return npa
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getNpa() {
+  public List<Integer> getNpa() {
     return npa;
   }
 
-  public void setNpa(String npa) {
+  public void setNpa(List<Integer> npa) {
     this.npa = npa;
   }
 
-  public FilterListAvailableNumbers nxx(String nxx) {
+  public FilterListAvailableNumbers nxx(List<String> nxx) {
     this.nxx = nxx;
+    return this;
+  }
+
+  public FilterListAvailableNumbers addNxxItem(String nxxItem) {
+    this.nxx.add(nxxItem);
     return this;
   }
 
@@ -117,16 +139,21 @@ public class FilterListAvailableNumbers {
    * @return nxx
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getNxx() {
+  public List<String> getNxx() {
     return nxx;
   }
 
-  public void setNxx(String nxx) {
+  public void setNxx(List<String> nxx) {
     this.nxx = nxx;
   }
 
-  public FilterListAvailableNumbers xxxx(String xxxx) {
+  public FilterListAvailableNumbers xxxx(List<String> xxxx) {
     this.xxxx = xxxx;
+    return this;
+  }
+
+  public FilterListAvailableNumbers addXxxxItem(String xxxxItem) {
+    this.xxxx.add(xxxxItem);
     return this;
   }
 
@@ -135,16 +162,21 @@ public class FilterListAvailableNumbers {
    * @return xxxx
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getXxxx() {
+  public List<String> getXxxx() {
     return xxxx;
   }
 
-  public void setXxxx(String xxxx) {
+  public void setXxxx(List<String> xxxx) {
     this.xxxx = xxxx;
   }
 
-  public FilterListAvailableNumbers city(String city) {
+  public FilterListAvailableNumbers city(List<String> city) {
     this.city = city;
+    return this;
+  }
+
+  public FilterListAvailableNumbers addCityItem(String cityItem) {
+    this.city.add(cityItem);
     return this;
   }
 
@@ -153,16 +185,21 @@ public class FilterListAvailableNumbers {
    * @return city
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getCity() {
+  public List<String> getCity() {
     return city;
   }
 
-  public void setCity(String city) {
+  public void setCity(List<String> city) {
     this.city = city;
   }
 
-  public FilterListAvailableNumbers province(String province) {
+  public FilterListAvailableNumbers province(List<String> province) {
     this.province = province;
+    return this;
+  }
+
+  public FilterListAvailableNumbers addProvinceItem(String provinceItem) {
+    this.province.add(provinceItem);
     return this;
   }
 
@@ -171,16 +208,21 @@ public class FilterListAvailableNumbers {
    * @return province
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getProvince() {
+  public List<String> getProvince() {
     return province;
   }
 
-  public void setProvince(String province) {
+  public void setProvince(List<String> province) {
     this.province = province;
   }
 
-  public FilterListAvailableNumbers country(String country) {
+  public FilterListAvailableNumbers country(List<String> country) {
     this.country = country;
+    return this;
+  }
+
+  public FilterListAvailableNumbers addCountryItem(String countryItem) {
+    this.country.add(countryItem);
     return this;
   }
 
@@ -189,16 +231,21 @@ public class FilterListAvailableNumbers {
    * @return country
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getCountry() {
+  public List<String> getCountry() {
     return country;
   }
 
-  public void setCountry(String country) {
+  public void setCountry(List<String> country) {
     this.country = country;
   }
 
-  public FilterListAvailableNumbers price(String price) {
+  public FilterListAvailableNumbers price(List<String> price) {
     this.price = price;
+    return this;
+  }
+
+  public FilterListAvailableNumbers addPriceItem(String priceItem) {
+    this.price.add(priceItem);
     return this;
   }
 
@@ -207,16 +254,21 @@ public class FilterListAvailableNumbers {
    * @return price
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getPrice() {
+  public List<String> getPrice() {
     return price;
   }
 
-  public void setPrice(String price) {
+  public void setPrice(List<String> price) {
     this.price = price;
   }
 
-  public FilterListAvailableNumbers category(String category) {
+  public FilterListAvailableNumbers category(List<String> category) {
     this.category = category;
+    return this;
+  }
+
+  public FilterListAvailableNumbers addCategoryItem(String categoryItem) {
+    this.category.add(categoryItem);
     return this;
   }
 
@@ -225,11 +277,11 @@ public class FilterListAvailableNumbers {
    * @return category
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getCategory() {
+  public List<String> getCategory() {
     return category;
   }
 
-  public void setCategory(String category) {
+  public void setCategory(List<String> category) {
     this.category = category;
   }
 

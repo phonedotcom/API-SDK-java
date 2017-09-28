@@ -1,4 +1,4 @@
-/**
+/*
  * Phone.com API
  * This is a Phone.com api Swagger definition
  *
@@ -13,76 +13,27 @@
 
 package io.swagger.client.api;
 
-import static io.swagger.client.helper.TestConfig.GREATER_THAN_FILTER;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
-import java.util.List;
-
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
-
 import io.swagger.client.ApiException;
-import io.swagger.client.helper.TestConfig;
 import io.swagger.client.model.CreateGroupParams;
 import io.swagger.client.model.DeleteGroup;
-import io.swagger.client.model.FilterIdNameArray;
 import io.swagger.client.model.GroupFull;
-import io.swagger.client.model.ListGroups;
-import io.swagger.client.model.SortIdName;
+import io.swagger.client.model.ListGroupsFull;
+import org.junit.Test;
+import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * API tests for GroupsApi
  */
+@Ignore
 public class GroupsApiTest {
 
     private final GroupsApi api = new GroupsApi();
 
-    @Before
-    public void initTest() {
-    	TestConfig.setAuthorization();
-    }
-    
-    @Test
-    public void createGetReplaceDeleteGroup() throws ApiException {
-
-    	// Create
-    	Integer accountId = 1315091;
-        Integer extensionId = 1767963;
-        CreateGroupParams data = new CreateGroupParams();
-        String name = "name" + TestConfig.nextRandom();
-		data.setName(name);
-
-		
-
-		GroupFull responseCreate = api.createAccountExtensionContactGroup(accountId, extensionId, data);
-        assertNotNull(responseCreate);
-        assertEquals(name, responseCreate.getName());
-
-        // Get After Create
-        GroupFull responseGetAfterCreate = 
-        		api.getAccountExtensionContactGroup(accountId, extensionId, responseCreate.getId());
-        assertNotNull(responseGetAfterCreate);
-        assertEquals(name, responseCreate.getName());
-
-
-        // Replace
-        String name2 = "idroeG";
-        data.setName(name2);
-        GroupFull responseReplace = api.replaceAccountExtensionContactGroup(accountId, extensionId, responseCreate.getId(), data);
-        assertNotNull(responseReplace);
-
-        // Get After Replace
-        GroupFull responseGetAfterReplace = 
-        		api.getAccountExtensionContactGroup(accountId, extensionId, responseCreate.getId());
-        assertNotNull(responseGetAfterReplace);
-        assertEquals(name2, responseGetAfterReplace.getName());
-        
-        // Delete
-        DeleteGroup responseDelete = api.deleteAccountExtensionContactGroup(accountId, extensionId, responseReplace.getId());
-        assertNotNull(responseDelete);
-        assertEquals(true, responseDelete.getSuccess());
-    }
     
     /**
      * 
@@ -93,14 +44,13 @@ public class GroupsApiTest {
      *          if the Api call fails
      */
     @Test
-    @Ignore("Tested in previous test")
     public void createAccountExtensionContactGroupTest() throws ApiException {
-        Integer accountId = null;
-        Integer extensionId = null;
+        Integer accountId = 1315091;
+        Integer extensionId = 1764590;
         CreateGroupParams data = null;
         GroupFull response = api.createAccountExtensionContactGroup(accountId, extensionId, data);
 
-        assertNotNull(response);
+        // TODO: test validations
     }
     
     /**
@@ -112,14 +62,13 @@ public class GroupsApiTest {
      *          if the Api call fails
      */
     @Test
-    @Ignore("Tested in previous test")
     public void deleteAccountExtensionContactGroupTest() throws ApiException {
-        Integer accountId = null;
-        Integer extensionId = null;
+        Integer accountId = 1315091;
+        Integer extensionId = 1764590;
         Integer groupId = null;
         DeleteGroup response = api.deleteAccountExtensionContactGroup(accountId, extensionId, groupId);
 
-        assertNotNull(response);
+        // TODO: test validations
     }
     
     /**
@@ -131,14 +80,13 @@ public class GroupsApiTest {
      *          if the Api call fails
      */
     @Test
-    @Ignore("Tested in previous test")
     public void getAccountExtensionContactGroupTest() throws ApiException {
         Integer accountId = 1315091;
         Integer extensionId = 1764590;
         Integer groupId = null;
         GroupFull response = api.getAccountExtensionContactGroup(accountId, extensionId, groupId);
 
-        assertNotNull(response);
+        // TODO: test validations
     }
     
     /**
@@ -150,52 +98,19 @@ public class GroupsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listGetAccountExtensionContactGroupsTest() throws ApiException {
-
+    public void listAccountExtensionContactGroupsTest() throws ApiException {
         Integer accountId = 1315091;
         Integer extensionId = 1764590;
-        List<String> filtersId = TestConfig.createDefaultFilter();
-        List<String> filtersName = TestConfig.createDefaultFilter();
-        String sortId = "asc";
-        String sortName = "asc";
-        Integer limit = 4;
-        Integer offset = 1;
+        List<String> filtersId = null;
+        List<String> filtersName = null;
+        String sortId = null;
+        String sortName = null;
+        Integer limit = null;
+        Integer offset = null;
         String fields = null;
-        
-        // When
-        ListGroups response = api.listAccountExtensionContactGroups(accountId, extensionId, filtersId, filtersName, sortId, sortName, limit, offset, fields);
+        ListGroupsFull response = api.listAccountExtensionContactGroups(accountId, extensionId, filtersId, filtersName, sortId, sortName, limit, offset, fields);
 
-        // Then
-        assertNotNull(response);
-        List<GroupFull> items = response.getItems();
-        assertNotNull(items);
-        
-        FilterIdNameArray filters = response.getFilters();
-        assertNotNull(filters);
-        assertEquals(GREATER_THAN_FILTER, filters.getId());
-        
-        assertEquals(GREATER_THAN_FILTER, filters.getName());
-        
-        Integer limitActual = response.getLimit();
-        assertNotNull(limitActual);
-        assertEquals(limit, limitActual);
-        
-        Integer offsetActual = response.getOffset();
-        assertNotNull(offsetActual);
-        assertEquals(offset, offsetActual);
-        
-        SortIdName sort = response.getSort();
-        assertNotNull(sort);
-        assertEquals(sortId, sort.getId());
-        
-        assertEquals(sortName, sort.getName());
-        
-        if (items.size() > 0) {
-	        Integer firstItemId = response.getItems().get(0).getId();
-	        GroupFull getGroupResponse = api.getAccountExtensionContactGroup(accountId, extensionId, firstItemId);
-	        assertNotNull(getGroupResponse.getId());
-	        assertNotNull(getGroupResponse.getName());
-        }
+        // TODO: test validations
     }
     
     /**
@@ -207,18 +122,13 @@ public class GroupsApiTest {
      *          if the Api call fails
      */
     @Test
-    @Ignore("Tested in previous test")
     public void replaceAccountExtensionContactGroupTest() throws ApiException {
-
-        Integer accountId = null;
-        Integer extensionId = null;
+        Integer accountId = 1315091;
+        Integer extensionId = 1764590;
         Integer groupId = null;
-        CreateGroupParams data = new CreateGroupParams();
-        String name = "Geordi";
-		data.setName(name);
-        GroupFull response = api.replaceAccountExtensionContactGroup(accountId, extensionId, groupId, data);
+        GroupFull response = api.replaceAccountExtensionContactGroup(accountId, extensionId, groupId);
 
-        assertNotNull(response);
+        // TODO: test validations
     }
     
 }

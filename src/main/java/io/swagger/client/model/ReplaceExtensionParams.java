@@ -17,19 +17,16 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.CallNotifications;
-import io.swagger.client.model.Voicemail;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ReplaceExtensionParams
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class ReplaceExtensionParams {
-  @SerializedName("voicemail")
-  private Voicemail voicemail = null;
-
-  @SerializedName("call_notifications")
-  private CallNotifications callNotifications = null;
+  @SerializedName("voicemail[greeting][alternate]")
+  private Object voicemailGreetingAlternate = null;
 
   @SerializedName("name_greeting")
   private Object nameGreeting = null;
@@ -52,11 +49,20 @@ public class ReplaceExtensionParams {
   @SerializedName("usage_type")
   private String usageType = null;
 
+  @SerializedName("voicemail[password]")
+  private Integer voicemailPassword = null;
+
   @SerializedName("full_name")
   private String fullName = null;
 
   @SerializedName("enable_call_waiting")
   private Boolean enableCallWaiting = null;
+
+  @SerializedName("voicemail[greeting][standard]")
+  private Object voicemailGreetingStandard = null;
+
+  @SerializedName("voicemail[greeting][type]")
+  private String voicemailGreetingType = null;
 
   @SerializedName("caller_id")
   private String callerId = null;
@@ -64,43 +70,46 @@ public class ReplaceExtensionParams {
   @SerializedName("local_area_code")
   private Integer localAreaCode = null;
 
+  @SerializedName("voicemail[enabled]")
+  private Boolean voicemailEnabled = null;
+
+  @SerializedName("voicemail[greeting][enable_leave_message_prompt]")
+  private Boolean voicemailGreetingEnableLeaveMessagePrompt = null;
+
+  @SerializedName("voicemail[transcription]")
+  private String voicemailTranscription = null;
+
+  @SerializedName("voicemail[notifications][emails]")
+  private List<String> voicemailNotificationsEmails = new ArrayList<String>();
+
+  @SerializedName("voicemail[notifications][sms]")
+  private String voicemailNotificationsSms = null;
+
+  @SerializedName("call_notifications[emails]")
+  private List<String> callNotificationsEmails = new ArrayList<String>();
+
+  @SerializedName("call_notifications[sms]")
+  private String callNotificationsSms = null;
+
   @SerializedName("route")
-  private String route = null;
+  private List<String> route = new ArrayList<String>();
 
-  public ReplaceExtensionParams voicemail(Voicemail voicemail) {
-    this.voicemail = voicemail;
+  public ReplaceExtensionParams voicemailGreetingAlternate(Object voicemailGreetingAlternate) {
+    this.voicemailGreetingAlternate = voicemailGreetingAlternate;
     return this;
   }
 
    /**
-   * Voicemail object
-   * @return voicemail
+   * Recording lookup object
+   * @return voicemailGreetingAlternate
   **/
-  @ApiModelProperty(example = "null", value = "Voicemail object")
-  public Voicemail getVoicemail() {
-    return voicemail;
+  @ApiModelProperty(example = "null", value = "Recording lookup object")
+  public Object getVoicemailGreetingAlternate() {
+    return voicemailGreetingAlternate;
   }
 
-  public void setVoicemail(Voicemail voicemail) {
-    this.voicemail = voicemail;
-  }
-
-  public ReplaceExtensionParams callNotifications(CallNotifications callNotifications) {
-    this.callNotifications = callNotifications;
-    return this;
-  }
-
-   /**
-   * Call Notifications object
-   * @return callNotifications
-  **/
-  @ApiModelProperty(example = "null", value = "Call Notifications object")
-  public CallNotifications getCallNotifications() {
-    return callNotifications;
-  }
-
-  public void setCallNotifications(CallNotifications callNotifications) {
-    this.callNotifications = callNotifications;
+  public void setVoicemailGreetingAlternate(Object voicemailGreetingAlternate) {
+    this.voicemailGreetingAlternate = voicemailGreetingAlternate;
   }
 
   public ReplaceExtensionParams nameGreeting(Object nameGreeting) {
@@ -229,6 +238,24 @@ public class ReplaceExtensionParams {
     this.usageType = usageType;
   }
 
+  public ReplaceExtensionParams voicemailPassword(Integer voicemailPassword) {
+    this.voicemailPassword = voicemailPassword;
+    return this;
+  }
+
+   /**
+   * Voicemail password
+   * @return voicemailPassword
+  **/
+  @ApiModelProperty(example = "null", value = "Voicemail password")
+  public Integer getVoicemailPassword() {
+    return voicemailPassword;
+  }
+
+  public void setVoicemailPassword(Integer voicemailPassword) {
+    this.voicemailPassword = voicemailPassword;
+  }
+
   public ReplaceExtensionParams fullName(String fullName) {
     this.fullName = fullName;
     return this;
@@ -263,6 +290,42 @@ public class ReplaceExtensionParams {
 
   public void setEnableCallWaiting(Boolean enableCallWaiting) {
     this.enableCallWaiting = enableCallWaiting;
+  }
+
+  public ReplaceExtensionParams voicemailGreetingStandard(Object voicemailGreetingStandard) {
+    this.voicemailGreetingStandard = voicemailGreetingStandard;
+    return this;
+  }
+
+   /**
+   * Recording lookup object
+   * @return voicemailGreetingStandard
+  **/
+  @ApiModelProperty(example = "null", value = "Recording lookup object")
+  public Object getVoicemailGreetingStandard() {
+    return voicemailGreetingStandard;
+  }
+
+  public void setVoicemailGreetingStandard(Object voicemailGreetingStandard) {
+    this.voicemailGreetingStandard = voicemailGreetingStandard;
+  }
+
+  public ReplaceExtensionParams voicemailGreetingType(String voicemailGreetingType) {
+    this.voicemailGreetingType = voicemailGreetingType;
+    return this;
+  }
+
+   /**
+   * Voicemail greeting type
+   * @return voicemailGreetingType
+  **/
+  @ApiModelProperty(example = "null", value = "Voicemail greeting type")
+  public String getVoicemailGreetingType() {
+    return voicemailGreetingType;
+  }
+
+  public void setVoicemailGreetingType(String voicemailGreetingType) {
+    this.voicemailGreetingType = voicemailGreetingType;
   }
 
   public ReplaceExtensionParams callerId(String callerId) {
@@ -301,8 +364,149 @@ public class ReplaceExtensionParams {
     this.localAreaCode = localAreaCode;
   }
 
-  public ReplaceExtensionParams route(String route) {
+  public ReplaceExtensionParams voicemailEnabled(Boolean voicemailEnabled) {
+    this.voicemailEnabled = voicemailEnabled;
+    return this;
+  }
+
+   /**
+   * Voicemail enabled
+   * @return voicemailEnabled
+  **/
+  @ApiModelProperty(example = "null", value = "Voicemail enabled")
+  public Boolean getVoicemailEnabled() {
+    return voicemailEnabled;
+  }
+
+  public void setVoicemailEnabled(Boolean voicemailEnabled) {
+    this.voicemailEnabled = voicemailEnabled;
+  }
+
+  public ReplaceExtensionParams voicemailGreetingEnableLeaveMessagePrompt(Boolean voicemailGreetingEnableLeaveMessagePrompt) {
+    this.voicemailGreetingEnableLeaveMessagePrompt = voicemailGreetingEnableLeaveMessagePrompt;
+    return this;
+  }
+
+   /**
+   * Use leave message prompt after voicemail
+   * @return voicemailGreetingEnableLeaveMessagePrompt
+  **/
+  @ApiModelProperty(example = "null", value = "Use leave message prompt after voicemail")
+  public Boolean getVoicemailGreetingEnableLeaveMessagePrompt() {
+    return voicemailGreetingEnableLeaveMessagePrompt;
+  }
+
+  public void setVoicemailGreetingEnableLeaveMessagePrompt(Boolean voicemailGreetingEnableLeaveMessagePrompt) {
+    this.voicemailGreetingEnableLeaveMessagePrompt = voicemailGreetingEnableLeaveMessagePrompt;
+  }
+
+  public ReplaceExtensionParams voicemailTranscription(String voicemailTranscription) {
+    this.voicemailTranscription = voicemailTranscription;
+    return this;
+  }
+
+   /**
+   * Voicemail transcription type
+   * @return voicemailTranscription
+  **/
+  @ApiModelProperty(example = "null", value = "Voicemail transcription type")
+  public String getVoicemailTranscription() {
+    return voicemailTranscription;
+  }
+
+  public void setVoicemailTranscription(String voicemailTranscription) {
+    this.voicemailTranscription = voicemailTranscription;
+  }
+
+  public ReplaceExtensionParams voicemailNotificationsEmails(List<String> voicemailNotificationsEmails) {
+    this.voicemailNotificationsEmails = voicemailNotificationsEmails;
+    return this;
+  }
+
+  public ReplaceExtensionParams addVoicemailNotificationsEmailsItem(String voicemailNotificationsEmailsItem) {
+    this.voicemailNotificationsEmails.add(voicemailNotificationsEmailsItem);
+    return this;
+  }
+
+   /**
+   * Email notifications for voicemails. Can be a single email or an array of emails
+   * @return voicemailNotificationsEmails
+  **/
+  @ApiModelProperty(example = "null", value = "Email notifications for voicemails. Can be a single email or an array of emails")
+  public List<String> getVoicemailNotificationsEmails() {
+    return voicemailNotificationsEmails;
+  }
+
+  public void setVoicemailNotificationsEmails(List<String> voicemailNotificationsEmails) {
+    this.voicemailNotificationsEmails = voicemailNotificationsEmails;
+  }
+
+  public ReplaceExtensionParams voicemailNotificationsSms(String voicemailNotificationsSms) {
+    this.voicemailNotificationsSms = voicemailNotificationsSms;
+    return this;
+  }
+
+   /**
+   * SMS notifications for voicemails
+   * @return voicemailNotificationsSms
+  **/
+  @ApiModelProperty(example = "null", value = "SMS notifications for voicemails")
+  public String getVoicemailNotificationsSms() {
+    return voicemailNotificationsSms;
+  }
+
+  public void setVoicemailNotificationsSms(String voicemailNotificationsSms) {
+    this.voicemailNotificationsSms = voicemailNotificationsSms;
+  }
+
+  public ReplaceExtensionParams callNotificationsEmails(List<String> callNotificationsEmails) {
+    this.callNotificationsEmails = callNotificationsEmails;
+    return this;
+  }
+
+  public ReplaceExtensionParams addCallNotificationsEmailsItem(String callNotificationsEmailsItem) {
+    this.callNotificationsEmails.add(callNotificationsEmailsItem);
+    return this;
+  }
+
+   /**
+   * Email notifications for calls. Can be a single email or an array of emails
+   * @return callNotificationsEmails
+  **/
+  @ApiModelProperty(example = "null", value = "Email notifications for calls. Can be a single email or an array of emails")
+  public List<String> getCallNotificationsEmails() {
+    return callNotificationsEmails;
+  }
+
+  public void setCallNotificationsEmails(List<String> callNotificationsEmails) {
+    this.callNotificationsEmails = callNotificationsEmails;
+  }
+
+  public ReplaceExtensionParams callNotificationsSms(String callNotificationsSms) {
+    this.callNotificationsSms = callNotificationsSms;
+    return this;
+  }
+
+   /**
+   * SMS notifications for calls
+   * @return callNotificationsSms
+  **/
+  @ApiModelProperty(example = "null", value = "SMS notifications for calls")
+  public String getCallNotificationsSms() {
+    return callNotificationsSms;
+  }
+
+  public void setCallNotificationsSms(String callNotificationsSms) {
+    this.callNotificationsSms = callNotificationsSms;
+  }
+
+  public ReplaceExtensionParams route(List<String> route) {
     this.route = route;
+    return this;
+  }
+
+  public ReplaceExtensionParams addRouteItem(String routeItem) {
+    this.route.add(routeItem);
     return this;
   }
 
@@ -311,11 +515,11 @@ public class ReplaceExtensionParams {
    * @return route
   **/
   @ApiModelProperty(example = "null", value = "Route object lookup (must belong to this extension)")
-  public String getRoute() {
+  public List<String> getRoute() {
     return route;
   }
 
-  public void setRoute(String route) {
+  public void setRoute(List<String> route) {
     this.route = route;
   }
 
@@ -329,8 +533,7 @@ public class ReplaceExtensionParams {
       return false;
     }
     ReplaceExtensionParams replaceExtensionParams = (ReplaceExtensionParams) o;
-    return Objects.equals(this.voicemail, replaceExtensionParams.voicemail) &&
-        Objects.equals(this.callNotifications, replaceExtensionParams.callNotifications) &&
+    return Objects.equals(this.voicemailGreetingAlternate, replaceExtensionParams.voicemailGreetingAlternate) &&
         Objects.equals(this.nameGreeting, replaceExtensionParams.nameGreeting) &&
         Objects.equals(this.name, replaceExtensionParams.name) &&
         Objects.equals(this.timezone, replaceExtensionParams.timezone) &&
@@ -338,16 +541,26 @@ public class ReplaceExtensionParams {
         Objects.equals(this.extension, replaceExtensionParams.extension) &&
         Objects.equals(this.enableOutboundCalls, replaceExtensionParams.enableOutboundCalls) &&
         Objects.equals(this.usageType, replaceExtensionParams.usageType) &&
+        Objects.equals(this.voicemailPassword, replaceExtensionParams.voicemailPassword) &&
         Objects.equals(this.fullName, replaceExtensionParams.fullName) &&
         Objects.equals(this.enableCallWaiting, replaceExtensionParams.enableCallWaiting) &&
+        Objects.equals(this.voicemailGreetingStandard, replaceExtensionParams.voicemailGreetingStandard) &&
+        Objects.equals(this.voicemailGreetingType, replaceExtensionParams.voicemailGreetingType) &&
         Objects.equals(this.callerId, replaceExtensionParams.callerId) &&
         Objects.equals(this.localAreaCode, replaceExtensionParams.localAreaCode) &&
+        Objects.equals(this.voicemailEnabled, replaceExtensionParams.voicemailEnabled) &&
+        Objects.equals(this.voicemailGreetingEnableLeaveMessagePrompt, replaceExtensionParams.voicemailGreetingEnableLeaveMessagePrompt) &&
+        Objects.equals(this.voicemailTranscription, replaceExtensionParams.voicemailTranscription) &&
+        Objects.equals(this.voicemailNotificationsEmails, replaceExtensionParams.voicemailNotificationsEmails) &&
+        Objects.equals(this.voicemailNotificationsSms, replaceExtensionParams.voicemailNotificationsSms) &&
+        Objects.equals(this.callNotificationsEmails, replaceExtensionParams.callNotificationsEmails) &&
+        Objects.equals(this.callNotificationsSms, replaceExtensionParams.callNotificationsSms) &&
         Objects.equals(this.route, replaceExtensionParams.route);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(voicemail, callNotifications, nameGreeting, name, timezone, includeInDirectory, extension, enableOutboundCalls, usageType, fullName, enableCallWaiting, callerId, localAreaCode, route);
+    return Objects.hash(voicemailGreetingAlternate, nameGreeting, name, timezone, includeInDirectory, extension, enableOutboundCalls, usageType, voicemailPassword, fullName, enableCallWaiting, voicemailGreetingStandard, voicemailGreetingType, callerId, localAreaCode, voicemailEnabled, voicemailGreetingEnableLeaveMessagePrompt, voicemailTranscription, voicemailNotificationsEmails, voicemailNotificationsSms, callNotificationsEmails, callNotificationsSms, route);
   }
 
 
@@ -356,8 +569,7 @@ public class ReplaceExtensionParams {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReplaceExtensionParams {\n");
     
-    sb.append("    voicemail: ").append(toIndentedString(voicemail)).append("\n");
-    sb.append("    callNotifications: ").append(toIndentedString(callNotifications)).append("\n");
+    sb.append("    voicemailGreetingAlternate: ").append(toIndentedString(voicemailGreetingAlternate)).append("\n");
     sb.append("    nameGreeting: ").append(toIndentedString(nameGreeting)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
@@ -365,10 +577,20 @@ public class ReplaceExtensionParams {
     sb.append("    extension: ").append(toIndentedString(extension)).append("\n");
     sb.append("    enableOutboundCalls: ").append(toIndentedString(enableOutboundCalls)).append("\n");
     sb.append("    usageType: ").append(toIndentedString(usageType)).append("\n");
+    sb.append("    voicemailPassword: ").append(toIndentedString(voicemailPassword)).append("\n");
     sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
     sb.append("    enableCallWaiting: ").append(toIndentedString(enableCallWaiting)).append("\n");
+    sb.append("    voicemailGreetingStandard: ").append(toIndentedString(voicemailGreetingStandard)).append("\n");
+    sb.append("    voicemailGreetingType: ").append(toIndentedString(voicemailGreetingType)).append("\n");
     sb.append("    callerId: ").append(toIndentedString(callerId)).append("\n");
     sb.append("    localAreaCode: ").append(toIndentedString(localAreaCode)).append("\n");
+    sb.append("    voicemailEnabled: ").append(toIndentedString(voicemailEnabled)).append("\n");
+    sb.append("    voicemailGreetingEnableLeaveMessagePrompt: ").append(toIndentedString(voicemailGreetingEnableLeaveMessagePrompt)).append("\n");
+    sb.append("    voicemailTranscription: ").append(toIndentedString(voicemailTranscription)).append("\n");
+    sb.append("    voicemailNotificationsEmails: ").append(toIndentedString(voicemailNotificationsEmails)).append("\n");
+    sb.append("    voicemailNotificationsSms: ").append(toIndentedString(voicemailNotificationsSms)).append("\n");
+    sb.append("    callNotificationsEmails: ").append(toIndentedString(callNotificationsEmails)).append("\n");
+    sb.append("    callNotificationsSms: ").append(toIndentedString(callNotificationsSms)).append("\n");
     sb.append("    route: ").append(toIndentedString(route)).append("\n");
     sb.append("}");
     return sb.toString();

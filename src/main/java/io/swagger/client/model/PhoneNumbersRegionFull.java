@@ -22,16 +22,16 @@ import io.swagger.annotations.ApiModelProperty;
  * The Region Object may include any of several fields describing the group, as well as the quantity of phone numbers available in that group. Here are the properties:
  */
 @ApiModel(description = "The Region Object may include any of several fields describing the group, as well as the quantity of phone numbers available in that group. Here are the properties:")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class PhoneNumbersRegionFull {
   @SerializedName("country_code")
   private String countryCode = null;
 
   @SerializedName("npa")
-  private Integer npa = null;
+  private String npa = null;
 
   @SerializedName("nxx")
-  private Integer nxx = null;
+  private String nxx = null;
 
   @SerializedName("is_toll_free")
   private Integer isTollFree = null;
@@ -66,7 +66,7 @@ public class PhoneNumbersRegionFull {
     this.countryCode = countryCode;
   }
 
-  public PhoneNumbersRegionFull npa(Integer npa) {
+  public PhoneNumbersRegionFull npa(String npa) {
     this.npa = npa;
     return this;
   }
@@ -76,15 +76,15 @@ public class PhoneNumbersRegionFull {
    * @return npa
   **/
   @ApiModelProperty(example = "null", value = "Optional. Area Code, for North American phone numbers.")
-  public Integer getNpa() {
+  public String getNpa() {
     return npa;
   }
 
-  public void setNpa(Integer npa) {
+  public void setNpa(String npa) {
     this.npa = npa;
   }
 
-  public PhoneNumbersRegionFull nxx(Integer nxx) {
+  public PhoneNumbersRegionFull nxx(String nxx) {
     this.nxx = nxx;
     return this;
   }
@@ -94,11 +94,11 @@ public class PhoneNumbersRegionFull {
    * @return nxx
   **/
   @ApiModelProperty(example = "null", value = "Optional. Second set of 3 digits, for North American phone numbers.")
-  public Integer getNxx() {
+  public String getNxx() {
     return nxx;
   }
 
-  public void setNxx(Integer nxx) {
+  public void setNxx(String nxx) {
     this.nxx = nxx;
   }
 

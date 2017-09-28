@@ -1,4 +1,4 @@
-/**
+/*
  * Phone.com API
  * This is a Phone.com api Swagger definition
  *
@@ -13,31 +13,26 @@
 
 package io.swagger.client.api;
 
-import static org.junit.Assert.assertNotNull;
-
-import java.util.List;
-
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
-
 import io.swagger.client.ApiException;
-import io.swagger.client.helper.TestConfig;
 import io.swagger.client.model.CreateSmsParams;
-import io.swagger.client.model.ListSms;
+import io.swagger.client.model.ListSmsFull;
 import io.swagger.client.model.SmsFull;
+import org.junit.Test;
+import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for SmsApi
  */
+@Ignore
 public class SmsApiTest {
 
     private final SmsApi api = new SmsApi();
 
-    @Before
-    public void initTest() {
-    	TestConfig.setAuthorization();
-    }
     
     /**
      * Send a SMS to one or a group of recipients
@@ -49,14 +44,11 @@ public class SmsApiTest {
      */
     @Test
     public void createAccountSmsTest() throws ApiException {
-
         Integer accountId = 1315091;
-        CreateSmsParams data = new CreateSmsParams();
-        data.setFrom("+16309624775");
-        data.setText("Another message for create");
-        data.setTo("+12019570328");
+        CreateSmsParams data = null;
         SmsFull response = api.createAccountSms(accountId, data);
-        assertNotNull(response);
+
+        // TODO: test validations
     }
     
     /**
@@ -68,12 +60,12 @@ public class SmsApiTest {
      *          if the Api call fails
      */
     @Test
-    @Ignore("Tested in other test")
     public void getAccountSmsTest() throws ApiException {
-        Integer accountId = null;
-        String smsId = null;
+        Integer accountId = 1315091;
+        Integer smsId = null;
         SmsFull response = api.getAccountSms(accountId, smsId);
-        assertNotNull(response);
+
+        // TODO: test validations
     }
     
     /**
@@ -85,8 +77,7 @@ public class SmsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listGetAccountSmsTest() throws ApiException {
-
+    public void listAccountSmsTest() throws ApiException {
         Integer accountId = 1315091;
         List<String> filtersId = null;
         String filtersDirection = null;
@@ -96,23 +87,9 @@ public class SmsApiTest {
         Integer limit = null;
         Integer offset = null;
         String fields = null;
-        ListSms response = api.listAccountSms(accountId, filtersId, filtersDirection, filtersFrom, sortId, sortCreatedAt, limit, offset, fields);
-        assertNotNull(response.getFilters());
-        List<SmsFull> items = response.getItems();
-		assertNotNull(items);
-        assertNotNull(response.getLimit());
-        assertNotNull(response.getOffset());
-        assertNotNull(response.getSort());
-        assertNotNull(response.getTotal());
-        
-        if (!items.isEmpty()) {
-        	SmsFull smsItem = api.getAccountSms(accountId, items.get(0).getId());
-        	assertNotNull(smsItem);
-        	assertNotNull(smsItem.getFrom());
-   			assertNotNull(smsItem.getTo());
-			assertNotNull(smsItem.getText());
-        	
-        }
+        ListSmsFull response = api.listAccountSms(accountId, filtersId, filtersDirection, filtersFrom, sortId, sortCreatedAt, limit, offset, fields);
+
+        // TODO: test validations
     }
     
 }

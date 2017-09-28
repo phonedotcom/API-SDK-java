@@ -17,14 +17,16 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * FilterIdDirectionFrom
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class FilterIdDirectionFrom {
   @SerializedName("id")
-  private String id = null;
+  private List<String> id = new ArrayList<String>();
 
   @SerializedName("direction")
   private String direction = null;
@@ -32,8 +34,13 @@ public class FilterIdDirectionFrom {
   @SerializedName("from")
   private String from = null;
 
-  public FilterIdDirectionFrom id(String id) {
+  public FilterIdDirectionFrom id(List<String> id) {
     this.id = id;
+    return this;
+  }
+
+  public FilterIdDirectionFrom addIdItem(String idItem) {
+    this.id.add(idItem);
     return this;
   }
 
@@ -42,11 +49,11 @@ public class FilterIdDirectionFrom {
    * @return id
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getId() {
+  public List<String> getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(List<String> id) {
     this.id = id;
   }
 

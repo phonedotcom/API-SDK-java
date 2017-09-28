@@ -23,7 +23,7 @@ import io.swagger.client.model.MediaSummary;
  * Voicemail Greeting Object. See below for details. Can be set to NULL to reset greeting options.
  */
 @ApiModel(description = "Voicemail Greeting Object. See below for details. Can be set to NULL to reset greeting options.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class Greeting {
   @SerializedName("type")
   private String type = null;

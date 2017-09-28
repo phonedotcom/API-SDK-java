@@ -23,13 +23,13 @@ import java.util.List;
 /**
  * CreateTrunkParams
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class CreateTrunkParams {
   @SerializedName("name")
   private String name = null;
 
-  @SerializedName("uri")
-  private String uri = null;
+  @SerializedName("url")
+  private String url = null;
 
   @SerializedName("max_concurrent_calls")
   private Integer maxConcurrentCalls = null;
@@ -55,7 +55,7 @@ public class CreateTrunkParams {
    * Name of Trunk
    * @return name
   **/
-  @ApiModelProperty(example = "null", value = "Name of Trunk")
+  @ApiModelProperty(example = "null", required = true, value = "Name of Trunk")
   public String getName() {
     return name;
   }
@@ -64,22 +64,22 @@ public class CreateTrunkParams {
     this.name = name;
   }
 
-  public CreateTrunkParams uri(String uri) {
-    this.uri = uri;
+  public CreateTrunkParams url(String url) {
+    this.url = url;
     return this;
   }
 
    /**
    * URI of Trunk (in the form of SIP/user@host.com:port)
-   * @return uri
+   * @return url
   **/
-  @ApiModelProperty(example = "null", value = "URI of Trunk (in the form of SIP/user@host.com:port)")
-  public String getUri() {
-    return uri;
+  @ApiModelProperty(example = "null", required = true, value = "URI of Trunk (in the form of SIP/user@host.com:port)")
+  public String getUrl() {
+    return url;
   }
 
-  public void setUri(String uri) {
-    this.uri = uri;
+  public void setUrl(String url) {
+    this.url = url;
   }
 
   public CreateTrunkParams maxConcurrentCalls(Integer maxConcurrentCalls) {
@@ -188,7 +188,7 @@ public class CreateTrunkParams {
     }
     CreateTrunkParams createTrunkParams = (CreateTrunkParams) o;
     return Objects.equals(this.name, createTrunkParams.name) &&
-        Objects.equals(this.uri, createTrunkParams.uri) &&
+        Objects.equals(this.url, createTrunkParams.url) &&
         Objects.equals(this.maxConcurrentCalls, createTrunkParams.maxConcurrentCalls) &&
         Objects.equals(this.maxMinutesPerMonth, createTrunkParams.maxMinutesPerMonth) &&
         Objects.equals(this.greeting, createTrunkParams.greeting) &&
@@ -198,7 +198,7 @@ public class CreateTrunkParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, uri, maxConcurrentCalls, maxMinutesPerMonth, greeting, errorMessage, codecs);
+    return Objects.hash(name, url, maxConcurrentCalls, maxMinutesPerMonth, greeting, errorMessage, codecs);
   }
 
 
@@ -208,7 +208,7 @@ public class CreateTrunkParams {
     sb.append("class CreateTrunkParams {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
+    sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    maxConcurrentCalls: ").append(toIndentedString(maxConcurrentCalls)).append("\n");
     sb.append("    maxMinutesPerMonth: ").append(toIndentedString(maxMinutesPerMonth)).append("\n");
     sb.append("    greeting: ").append(toIndentedString(greeting)).append("\n");

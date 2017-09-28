@@ -1,4 +1,4 @@
-/**
+/*
  * Phone.com API
  * This is a Phone.com api Swagger definition
  *
@@ -13,34 +13,25 @@
 
 package io.swagger.client.api;
 
-import static io.swagger.client.helper.TestConfig.GREATER_THAN_FILTER;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
-import java.util.List;
-
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
-
 import io.swagger.client.ApiException;
-import io.swagger.client.helper.TestConfig;
 import io.swagger.client.model.ApplicationFull;
-import io.swagger.client.model.FilterIdNameArray;
-import io.swagger.client.model.ListApplications;
-import io.swagger.client.model.SortIdName;
+import io.swagger.client.model.ListApplicationsFull;
+import org.junit.Test;
+import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for ApplicationsApi
  */
+@Ignore
 public class ApplicationsApiTest {
 
     private final ApplicationsApi api = new ApplicationsApi();
 
-    @Before
-    public void initTest() {
-    	TestConfig.setAuthorization();
-    }
     
     /**
      * Show details of an individual application
@@ -51,20 +42,12 @@ public class ApplicationsApiTest {
      *          if the Api call fails
      */
     @Test
-    @Ignore("Tested in listget test")
     public void getAccountApplicationTest() throws ApiException {
-
-    	Integer accountId = 1315091;
+        Integer accountId = 1315091;
         Integer applicationId = 1356077;
         ApplicationFull response = api.getAccountApplication(accountId, applicationId);
-        
-        assertNotNull(response);
-        
-        Integer id = response.getId();
-        assertNotNull(id);
-        String name = response.getName();
-        assertNotNull(name);
 
+        // TODO: test validations
     }
     
     /**
@@ -76,48 +59,18 @@ public class ApplicationsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listGetAccountApplicationsTest() throws ApiException {
-
+    public void listAccountApplicationsTest() throws ApiException {
         Integer accountId = 1315091;
-        List<String> filtersId = TestConfig.createDefaultFilter();
-
+        List<String> filtersId = null;
         List<String> filtersName = null;
-
-        String sortId = "asc";
+        String sortId = null;
         String sortName = null;
-        Integer limit = 4;
-        Integer offset = 1;
+        Integer limit = null;
+        Integer offset = null;
         String fields = null;
-        ListApplications response = api.listAccountApplications(accountId, filtersId, filtersName, sortId, sortName, limit, offset, fields);
+        ListApplicationsFull response = api.listAccountApplications(accountId, filtersId, filtersName, sortId, sortName, limit, offset, fields);
 
-        assertNotNull(response);
-        List<ApplicationFull> items = response.getItems();
-        assertNotNull(items);
-        
-        FilterIdNameArray filters = response.getFilters();
-        assertNotNull(filters);
-        assertEquals(GREATER_THAN_FILTER, filters.getId());
-        
-        Integer limitActual = response.getLimit();
-        assertNotNull(limitActual);
-        assertEquals(limit, limitActual);
-        
-        Integer offsetActual = response.getOffset();
-        assertNotNull(offsetActual);
-        assertEquals(offset, offsetActual);
-        
-        SortIdName sort = response.getSort();
-        assertNotNull(sort);
-        assertEquals(sortId, sort.getId());
-        
-        assertEquals(sortName, sort.getName());
-
-        if (items.size() > 0) {
-	        Integer firstItemId = items.get(0).getId();
-	        ApplicationFull getApplicationResponse = api.getAccountApplication(accountId, firstItemId);
-	        assertNotNull(getApplicationResponse.getId());
-	        assertNotNull(getApplicationResponse.getName());
-        }
+        // TODO: test validations
     }
     
 }

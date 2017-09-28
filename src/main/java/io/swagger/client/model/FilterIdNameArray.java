@@ -17,20 +17,27 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * FilterIdNameArray
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class FilterIdNameArray {
   @SerializedName("id")
-  private String id = null;
+  private List<String> id = new ArrayList<String>();
 
   @SerializedName("name")
-  private String name = null;
+  private List<String> name = new ArrayList<String>();
 
-  public FilterIdNameArray id(String id) {
+  public FilterIdNameArray id(List<String> id) {
     this.id = id;
+    return this;
+  }
+
+  public FilterIdNameArray addIdItem(String idItem) {
+    this.id.add(idItem);
     return this;
   }
 
@@ -39,16 +46,21 @@ public class FilterIdNameArray {
    * @return id
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getId() {
+  public List<String> getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(List<String> id) {
     this.id = id;
   }
 
-  public FilterIdNameArray name(String name) {
+  public FilterIdNameArray name(List<String> name) {
     this.name = name;
+    return this;
+  }
+
+  public FilterIdNameArray addNameItem(String nameItem) {
+    this.name.add(nameItem);
     return this;
   }
 
@@ -57,11 +69,11 @@ public class FilterIdNameArray {
    * @return name
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getName() {
+  public List<String> getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(List<String> name) {
     this.name = name;
   }
 

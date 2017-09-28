@@ -1,4 +1,4 @@
-/**
+/*
  * Phone.com API
  * This is a Phone.com api Swagger definition
  *
@@ -13,32 +13,26 @@
 
 package io.swagger.client.api;
 
-import static org.junit.Assert.assertNotNull;
-
-import java.util.List;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import io.swagger.client.ApiException;
-import io.swagger.client.helper.TestConfig;
 import io.swagger.client.model.AccountFull;
-import io.swagger.client.model.Address;
-import io.swagger.client.model.ContactSubaccount;
 import io.swagger.client.model.CreateSubaccountParams;
-import io.swagger.client.model.ListAccounts;
+import io.swagger.client.model.ListAccountsFull;
+import org.junit.Test;
+import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for SubaccountsApi
  */
+@Ignore
 public class SubaccountsApiTest {
 
     private final SubaccountsApi api = new SubaccountsApi();
 
-    @Before
-    public void initTest() {
-    	TestConfig.setAuthorization();
-    }
     
     /**
      * Add a subaccount for the authenticated user or client
@@ -51,27 +45,10 @@ public class SubaccountsApiTest {
     @Test
     public void createAccountSubaccountTest() throws ApiException {
         Integer accountId = 1315091;
-        CreateSubaccountParams data = new CreateSubaccountParams();
-        ContactSubaccount x = new ContactSubaccount();
-        Address ad  = new Address();
-        ad.setCity("Poway");
-        ad.setCountry("US");
-        ad.setLine1("14282 Danielson Street");
-        ad.setPostalCode("92064");
-        ad.setProvince("CA");
-        x.setAddress(ad);
-        x.setAlternateEmail("ad@yahoo.com");
-        x.setCompany("Company");
-        x.setName("Teddy3");
-        x.setPhone("+18585551113");
-        x.setPrimaryEmail("test3@phone.com");
-        data.setBillingContact(x);
-        data.setContact(x);
-        data.setPassword("Teddy3");
-        data.setUsername(TestConfig.nextRandom());
-      
+        CreateSubaccountParams data = null;
         AccountFull response = api.createAccountSubaccount(accountId, data);
-        assertNotNull(response);
+
+        // TODO: test validations
     }
     
     /**
@@ -90,13 +67,9 @@ public class SubaccountsApiTest {
         Integer limit = null;
         Integer offset = null;
         String fields = null;
-        ListAccounts response = api.listAccountSubaccounts(accountId, filtersId, sortId, limit, offset, fields);
-        assertNotNull(response.getFilters());
-        assertNotNull(response.getItems());
-        assertNotNull(response.getLimit());
-        assertNotNull(response.getOffset());
-        assertNotNull(response.getSort());
-        assertNotNull(response.getTotal());
+        ListAccountsFull response = api.listAccountSubaccounts(accountId, filtersId, sortId, limit, offset, fields);
+
+        // TODO: test validations
     }
     
 }

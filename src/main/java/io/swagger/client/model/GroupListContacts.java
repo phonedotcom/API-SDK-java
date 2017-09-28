@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
  * Contact Group that this contact is filed under. Output is a Group Summary Object. Input is a Group Lookup Object.
  */
 @ApiModel(description = "Contact Group that this contact is filed under. Output is a Group Summary Object. Input is a Group Lookup Object.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class GroupListContacts {
   @SerializedName("id")
   private Integer id = null;

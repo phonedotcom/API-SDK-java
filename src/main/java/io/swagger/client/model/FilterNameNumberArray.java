@@ -17,20 +17,27 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * FilterNameNumberArray
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-03T15:39:58.948Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-31T14:54:48.237Z")
 public class FilterNameNumberArray {
   @SerializedName("name")
-  private String name = null;
+  private List<String> name = new ArrayList<String>();
 
   @SerializedName("number")
-  private String number = null;
+  private List<String> number = new ArrayList<String>();
 
-  public FilterNameNumberArray name(String name) {
+  public FilterNameNumberArray name(List<String> name) {
     this.name = name;
+    return this;
+  }
+
+  public FilterNameNumberArray addNameItem(String nameItem) {
+    this.name.add(nameItem);
     return this;
   }
 
@@ -39,16 +46,21 @@ public class FilterNameNumberArray {
    * @return name
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getName() {
+  public List<String> getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(List<String> name) {
     this.name = name;
   }
 
-  public FilterNameNumberArray number(String number) {
+  public FilterNameNumberArray number(List<String> number) {
     this.number = number;
+    return this;
+  }
+
+  public FilterNameNumberArray addNumberItem(String numberItem) {
+    this.number.add(numberItem);
     return this;
   }
 
@@ -57,11 +69,11 @@ public class FilterNameNumberArray {
    * @return number
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getNumber() {
+  public List<String> getNumber() {
     return number;
   }
 
-  public void setNumber(String number) {
+  public void setNumber(List<String> number) {
     this.number = number;
   }
 
